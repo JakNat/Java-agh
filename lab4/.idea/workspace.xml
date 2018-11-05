@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4830f63-e4d5-45f1-a7aa-76ece664a79d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../lab5/.idea/libraries/io_indico_indico_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab5/src/gravity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab5/src/zadanie3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab5/src/zadanie3/MicroDVD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab4/zad4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab4/zad4/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zad4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zad4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab5/src/MicroDVD.java" beforeDir="false" />
-    </list>
+    <list default="true" id="a4830f63-e4d5-45f1-a7aa-76ece664a79d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +21,12 @@
     <session id="-1217840607">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -216,6 +203,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,8 +239,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,7 +295,7 @@
   <component name="ToolWindowManager">
     <frame x="80" y="-5" width="1841" height="1086" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2607964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26472238" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
