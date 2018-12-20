@@ -1,0 +1,22 @@
+C:\Users\jakub.natonek\source\repos\lab8\lab8\bin\Debug\netcoreapp2.1\lab8.deps.json
+C:\Users\jakub.natonek\source\repos\lab8\lab8\bin\Debug\netcoreapp2.1\lab8.runtimeconfig.json
+C:\Users\jakub.natonek\source\repos\lab8\lab8\bin\Debug\netcoreapp2.1\lab8.runtimeconfig.dev.json
+C:\Users\jakub.natonek\source\repos\lab8\lab8\bin\Debug\netcoreapp2.1\lab8.dll
+C:\Users\jakub.natonek\source\repos\lab8\lab8\bin\Debug\netcoreapp2.1\lab8.pdb
+C:\Users\jakub.natonek\source\repos\lab8\lab8\obj\Debug\netcoreapp2.1\lab8.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\source\repos\lab8\lab8\obj\Debug\netcoreapp2.1\lab8.csproj.CoreCompileInputs.cache
+C:\Users\jakub.natonek\source\repos\lab8\lab8\obj\Debug\netcoreapp2.1\lab8.AssemblyInfoInputs.cache
+C:\Users\jakub.natonek\source\repos\lab8\lab8\obj\Debug\netcoreapp2.1\lab8.AssemblyInfo.cs
+C:\Users\jakub.natonek\source\repos\lab8\lab8\obj\Debug\netcoreapp2.1\lab8.dll
+C:\Users\jakub.natonek\source\repos\lab8\lab8\obj\Debug\netcoreapp2.1\lab8.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\bin\Debug\netcoreapp2.1\lab8.deps.json
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\bin\Debug\netcoreapp2.1\lab8.runtimeconfig.json
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\bin\Debug\netcoreapp2.1\lab8.runtimeconfig.dev.json
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\bin\Debug\netcoreapp2.1\lab8.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\bin\Debug\netcoreapp2.1\lab8.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\obj\Debug\netcoreapp2.1\lab8.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\obj\Debug\netcoreapp2.1\lab8.csproj.CoreCompileInputs.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\obj\Debug\netcoreapp2.1\lab8.AssemblyInfoInputs.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\obj\Debug\netcoreapp2.1\lab8.AssemblyInfo.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\obj\Debug\netcoreapp2.1\lab8.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab8 (c#)\lab8\obj\Debug\netcoreapp2.1\lab8.pdb
