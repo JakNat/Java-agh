@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,7 +32,7 @@ namespace MemeGenerator.Views
         /// <summary>
         /// Button method for generate meme
         /// </summary>
-        private void Create(object sender, RoutedEventArgs e)
+        private async void Create(object sender, RoutedEventArgs e)
         {
             string path = GetPath();
 
@@ -44,7 +45,12 @@ namespace MemeGenerator.Views
                 encoder.Save(stream);
 
             }
+
+          //  await ConnectToServer();
+
         }
+
+      
         /// <summary>
         /// Chosing path where we want to save our new meme
         /// </summary>

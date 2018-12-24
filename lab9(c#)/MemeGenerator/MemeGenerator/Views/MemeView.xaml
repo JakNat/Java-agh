@@ -12,6 +12,7 @@
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -22,7 +23,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="elementToRender" Grid.Column="1" Grid.ColumnSpan ="2"
+        <Grid x:Name="elementToRender" Grid.Column="1" Grid.ColumnSpan ="3"
               Grid.Row="1" Grid.RowSpan="3" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"/>
@@ -53,6 +54,7 @@
         
         <!--Row 4-->
         <Button Click="Create"  Grid.Row="4" Grid.Column="2"  FontSize="30" >Create Meme</Button>
+        <Button Name="CreateByServer" Grid.Row="4" Grid.Column="3"  FontSize="30" >Create By Server</Button>
         <Button Name="UploadImage" Grid.Row="4" Grid.Column="1"  FontSize="30" >Upload Meme</Button>
         
     </Grid>

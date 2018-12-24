@@ -50,3 +50,6 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\D
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csproj.CopyComplete
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.exe
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.pdb
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\NetworkCommsDotNet.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\protobuf-net.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\protobuf-net.xml

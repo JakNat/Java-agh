@@ -1,0 +1,10 @@
+Comment: A fatal exception occurred in IncomingPacketHandleHandOff(), connection with [TCP-E-E] 192.168.1.5:55730 -> 192.168.1.5:55757 (ltvg3LSbZU2fZUgiUgazBA) be closed. Loop counter 0. Packet builder contained 80 total cached bytes.
+
+Base Exception Type: NetworkCommsDotNet.SerialisationException: Unable to locate a serializer with id=1. Please ensure the desired serializer is available and try again.
+   at NetworkCommsDotNet.DPSBase.DPSManager.GetSerializerDataProcessorsFromIdentifier(Int64 id, DataSerializer& serializer, List`1& dataProcessors)
+   at NetworkCommsDotNet.Connections.Connection.IncomingPacketSendReceiveOptions(PacketHeader header)
+   at NetworkCommsDotNet.Connections.Connection.IncomingPacketHandleHandOff(PacketBuilder packetBuilder)
+
+Stack Trace:    at NetworkCommsDotNet.DPSBase.DPSManager.GetSerializerDataProcessorsFromIdentifier(Int64 id, DataSerializer& serializer, List`1& dataProcessors)
+   at NetworkCommsDotNet.Connections.Connection.IncomingPacketSendReceiveOptions(PacketHeader header)
+   at NetworkCommsDotNet.Connections.Connection.IncomingPacketHandleHandOff(PacketBuilder packetBuilder)

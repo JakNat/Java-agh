@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28306.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemeGenerator", "MemeGenerator\MemeGenerator.csproj", "{56A44E84-5D3A-420B-ACA1-FE7F2161BEE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemeGeneratorServer", "MemeGeneratorServer\MemeGeneratorServer.csproj", "{FB52CA65-ABD3-4A13-8702-600A863C0DEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemeGeneratorDataAccess", "MemeGeneratorDataAccess\MemeGeneratorDataAccess.csproj", "{628528B7-997B-41FE-8C7D-B495B56B4BA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{56A44E84-5D3A-420B-ACA1-FE7F2161BEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56A44E84-5D3A-420B-ACA1-FE7F2161BEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56A44E84-5D3A-420B-ACA1-FE7F2161BEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB52CA65-ABD3-4A13-8702-600A863C0DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB52CA65-ABD3-4A13-8702-600A863C0DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB52CA65-ABD3-4A13-8702-600A863C0DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB52CA65-ABD3-4A13-8702-600A863C0DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628528B7-997B-41FE-8C7D-B495B56B4BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628528B7-997B-41FE-8C7D-B495B56B4BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628528B7-997B-41FE-8C7D-B495B56B4BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628528B7-997B-41FE-8C7D-B495B56B4BA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
