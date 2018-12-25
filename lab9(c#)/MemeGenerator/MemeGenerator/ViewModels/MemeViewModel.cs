@@ -18,6 +18,8 @@ using NetworkCommsDotNet;
 using System.Linq;
 using NetworkCommsDotNet.DPSBase;
 using NetworkCommsDotNet.Connections.TCP;
+using System.Drawing;
+using MemeGenerator.Utils;
 
 namespace MemeGenerator.ViewModels
 {
@@ -59,7 +61,7 @@ namespace MemeGenerator.ViewModels
         /// select image to generate your new meme
         /// </summary>
         public void UploadImage()
-        {  
+        {
             OpenFileDialog op = new OpenFileDialog();
             op.Title = "Select a picture";
             op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
@@ -77,9 +79,8 @@ namespace MemeGenerator.ViewModels
         /// </summary>
         public async void CreateByServer()
         {
-            byte[] imageEncoded = EncodeImage(Image);
-
-            MemeDto meme = new MemeDto() { TopText = TopText, BottomText = BottomText, ImgByte = imageEncoded };
+            Bitmap bitmap = ImageHelper.BitmapImage2Bitmap(Image);
+            ImageWrapper meme = new ImageWrapper("meme", TopText, BottomText, bitmap);
 
             SendReceiveOptions customSendReceiveOptions = new SendReceiveOptions<ProtobufSerializer>();
             ConnectionInfo connectionInfo = new ConnectionInfo("192.168.1.5", 12345);
@@ -91,20 +92,7 @@ namespace MemeGenerator.ViewModels
             NetworkComms.Shutdown();
         }
 
-        private byte[] EncodeText(string text)
-        {
-            return Encoding.UTF8.GetBytes(text);
-        }
 
-        private byte[] EncodeImage(BitmapImage Image)
-        {
-            int height = Image.PixelHeight;
-            int width = Image.PixelWidth;
-            int stride = width * ((Image.Format.BitsPerPixel + 7) / 8);
-
-            byte[] bits = new byte[height * stride];
-            Image.CopyPixels(bits, stride, 0);
-            return bits;
-        }  
+       
     }
 }

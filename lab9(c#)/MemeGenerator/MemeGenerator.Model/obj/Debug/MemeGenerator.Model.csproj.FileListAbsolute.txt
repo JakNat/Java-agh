@@ -1,6 +1,5 @@
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\MemeGenerator.Model.dll
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\MemeGenerator.Model.pdb
-C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csprojAssemblyReference.cache
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CoreCompileInputs.cache
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.dll
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.pdb

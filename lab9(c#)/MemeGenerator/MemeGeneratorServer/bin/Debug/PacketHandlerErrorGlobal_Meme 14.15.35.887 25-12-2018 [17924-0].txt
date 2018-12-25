@@ -1,0 +1,10 @@
+Base Exception Type: System.DivideByZeroException: Attempted to divide by zero.
+   at MemeGeneratorServer.Program.PutText(ImageWrapper message)
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    at MemeGeneratorServer.Program.PutText(ImageWrapper message)
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)

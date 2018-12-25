@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,9 @@ namespace MemeGeneratorServer
         {
             //Trigger the method SetMeme when a packet of type 'Meme' is received
             //We expect the incoming object to be a meme which we state explicitly by using <meme>
-            NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>("Meme", SetMeme);
+            NetworkComms.AppendGlobalIncomingPacketHandler<ImageWrapper>("Meme", SetMeme);
+
+            NetworkComms.AppendGlobalIncomingPacketHandler<ImageWrapper>("GetMeme", SetMeme);
 
 
             //Start listening for incoming connections
@@ -48,51 +51,76 @@ namespace MemeGeneratorServer
         /// <param name="connection">The connection used by the incoming message</param>
         /// <param name="message">The message to be printed to the console</param>
       
-        private static void SetMeme(PacketHeader header, Connection connection, MemeDto message)
+        private static async void SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
         {
+            var memeContent = GenerateMeme(message);
+
             Meme meme = new Meme()
             {
-                Content = message.ImgByte,
+                Content = imageToByteArray(memeContent),
                 CreatedDate = DateTime.Now,
-                MemeTitle = message.TopText.Take(3).ToString()
+                MemeTitle = message.ImageName
             };
-            _memeRepository.Add(meme);
-            Console.WriteLine("\nImage bytes: " + message.ImgByte);
-            _memeRepository.SaveAsync();
-            PutText(message);
+
+            try
+            {
+                _memeRepository.Add(meme);
+                await _memeRepository.SaveAsync();
+                Console.WriteLine("\nNew meme added to database:\n" +
+                    "Meme title: " + meme.MemeTitle +
+                    "\nCreated by id: " + meme.CreatedById);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nError :( \nmessage:  " + ex.Message);
+            }
+            
 
         }
-        private static void PutText(MemeDto message)
+
+        private static Image GenerateMeme(ImageWrapper message)
         {
-           // BitmapImage bitmap = ToImage(ImgBytes);
-
-            Bitmap bitmap;
-            using (var ms = new MemoryStream(message.ImgByte))
-            {
-                bitmap = new Bitmap(ms);
-            }
-
-
 
             string firstText = message.TopText;
             string secondText = message.BottomText;
 
-            PointF firstLocation = new PointF(10f, 10f);
-            PointF secondLocation = new PointF(10f, 90f);
+            var image = message.Image;
 
-          //  Bitmap bitmap2 = BitmapImage2Bitmap(bitmap);//load the image file
+            RectangleF TopSize = new RectangleF(new Point(0, 0), new SizeF(image.Width, image.Height / 8));
+            int y = (int)(image.Height * (7.0 / 8.0));
+            RectangleF BottomSize = new RectangleF(new Point(0, y), new SizeF(image.Width, image.Height / 8));
 
+            StringFormat format = new StringFormat();
+            format.LineAlignment = StringAlignment.Center;
+            format.Alignment = StringAlignment.Center;
 
-            using (Graphics graphics = Graphics.FromImage(bitmap))
+            using (Graphics graphics = Graphics.FromImage(message.Image))
             {
-                using (Font arialFont = new Font("Impact", 30))
+                using (Font arialFont = new Font("Impact", image.Height / (14 / 1), FontStyle.Bold, GraphicsUnit.Point))
                 {
-                    graphics.DrawString(firstText, arialFont, Brushes.White, firstLocation);
-                    graphics.DrawString(secondText, arialFont, Brushes.White, secondLocation);
+                    graphics.DrawString(firstText, arialFont, Brushes.White, TopSize, format);
+                    graphics.DrawString(secondText, arialFont, Brushes.White, BottomSize, format);
                 }
             }
-            bitmap.Save(AppDomain.CurrentDomain.BaseDirectory);
+            var path = AppDomain.CurrentDomain.BaseDirectory + "test.jpg";
+            message.Image.Save(path);
+            return message.Image;
         }
+
+        public static byte[] imageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, ImageFormat.Gif);
+            return ms.ToArray();
+        }
+
+        public static Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
         private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
         {
             // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
