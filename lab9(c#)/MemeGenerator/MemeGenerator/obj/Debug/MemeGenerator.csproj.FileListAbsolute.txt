@@ -56,3 +56,7 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\D
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csprojAssemblyReference.cache
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\LoginView.g.cs
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\LoginView.baml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\MemeCreatorView.g.cs
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\RegisterView.g.cs
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\MemeCreatorView.baml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\RegisterView.baml

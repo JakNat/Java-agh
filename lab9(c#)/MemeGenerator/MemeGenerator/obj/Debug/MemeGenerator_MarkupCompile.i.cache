@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\App.xaml
-31498226660
+41155346001
 
-18-1039625061
+201104836985
 129763597033
-Views\LoginView.xaml;Views\MemeView.xaml;Views\RegisterView.xaml;
+Views\LoginView.xaml;Views\MemeCreatorView.xaml;Views\MemeView.xaml;Views\RegisterView.xaml;
 
-True
+False
 
