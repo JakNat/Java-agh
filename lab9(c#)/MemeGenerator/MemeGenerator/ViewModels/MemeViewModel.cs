@@ -72,12 +72,16 @@ namespace MemeGenerator.ViewModels
                 Image = new BitmapImage(new Uri(op.FileName));
                 NotifyOfPropertyChange(() => Image);
             }
+
+            var win = new Window();
+            win.Content = new LoginViewModel();
+            win.Show();
         }
 
         /// <summary>
         /// sending your meme properties to a MemeGeneratorServer
         /// </summary>
-        public async void CreateByServer()
+        public async void CreateByServer(BitmapImage image)
         {
             Bitmap bitmap = ImageHelper.BitmapImage2Bitmap(Image);
             ImageWrapper meme = new ImageWrapper("meme", TopText, BottomText, bitmap);
@@ -92,7 +96,22 @@ namespace MemeGenerator.ViewModels
             NetworkComms.Shutdown();
         }
 
-
-       
+        /// <summary>
+        /// turn on or turn of "Generetae Meme" button
+        /// </summary>
+        public bool CanCreateByServer(BitmapImage image)
+        {
+            return image != null;
+        }
+     
+        
+        public void LoadLoginPage()
+        {
+            ActivateItem(new LoginViewModel());
+        }
+        public void LoadRegisterPage()
+        {
+            ActivateItem(new RegisterViewModel());
+        }
     }
 }
