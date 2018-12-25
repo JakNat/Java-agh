@@ -9,7 +9,7 @@ using ProtoBuf;
 namespace MemeGenerator.Models
 {
     [ProtoContract]
-    public class Meme
+    public class MemeDto
     {
         [ProtoMember(1)]
         public string TopText { get; set; }
@@ -18,7 +18,7 @@ namespace MemeGenerator.Models
         [ProtoMember(3)]
         public byte[] ImgByte { get; internal set; }
 
-        public Meme()
+        public MemeDto()
         {
         }
 

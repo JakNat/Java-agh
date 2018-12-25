@@ -1,0 +1,12 @@
+Base Exception Type: System.ArgumentException: Parameter is not valid.
+   at System.Drawing.Bitmap..ctor(Stream stream)
+   at MemeGeneratorServer.Program.PutText(MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 72
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 62
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    at System.Drawing.Bitmap..ctor(Stream stream)
+   at MemeGeneratorServer.Program.PutText(MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 72
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 62
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)

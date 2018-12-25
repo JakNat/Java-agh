@@ -79,7 +79,7 @@ namespace MemeGenerator.ViewModels
         {
             byte[] imageEncoded = EncodeImage(Image);
 
-            Meme meme = new Meme() { TopText = TopText, BottomText = BottomText, ImgByte = imageEncoded };
+            MemeDto meme = new MemeDto() { TopText = TopText, BottomText = BottomText, ImgByte = imageEncoded };
 
             SendReceiveOptions customSendReceiveOptions = new SendReceiveOptions<ProtobufSerializer>();
             ConnectionInfo connectionInfo = new ConnectionInfo("192.168.1.5", 12345);

@@ -19,3 +19,14 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\Caliburn.Micro.Platform.Core.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\protobuf-net.dll
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\protobuf-net.xml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\EntityFramework.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\MemeGenerator.Model.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\MemeGeneratorDataAccess.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\MemeGenerator.Model.pdb
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\MemeGenerator.Model.dll.config
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\MemeGeneratorDataAccess.pdb
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\MemeGeneratorDataAccess.dll.config
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\EntityFramework.xml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\System.Drawing.Common.dll

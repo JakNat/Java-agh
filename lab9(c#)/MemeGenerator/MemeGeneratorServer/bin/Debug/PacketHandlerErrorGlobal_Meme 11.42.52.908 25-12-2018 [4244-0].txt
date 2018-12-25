@@ -1,0 +1,8 @@
+Base Exception Type: System.InvalidCastException: Unable to cast object of type '<TakeIterator>d__25`1[System.Char]' to type 'System.String'.
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 50
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 50
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)

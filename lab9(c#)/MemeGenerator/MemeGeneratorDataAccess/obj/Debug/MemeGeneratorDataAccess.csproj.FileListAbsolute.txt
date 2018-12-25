@@ -1,0 +1,15 @@
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGeneratorDataAccess.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGeneratorDataAccess.pdb
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csprojAssemblyReference.cache
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.pdb
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGeneratorDataAccess.dll.config
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGenerator.Model.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGenerator.Model.pdb
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGenerator.Model.dll.config
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.CopyComplete

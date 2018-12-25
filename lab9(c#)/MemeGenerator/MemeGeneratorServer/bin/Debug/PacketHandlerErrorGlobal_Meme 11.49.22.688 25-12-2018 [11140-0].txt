@@ -1,0 +1,26 @@
+Base Exception Type: System.InvalidOperationException: The context cannot be used while the model is being created. This exception may be thrown if the context is used inside the OnModelCreating method or if the same context instance is accessed by multiple threads concurrently. Note that instance members of DbContext and related classes are not guaranteed to be thread safe.
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at MemeGeneratorServer.DAL.GenericRepository`2.Add(TEntity model) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\DAL\GenericRepository.cs:line 23
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 56
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at MemeGeneratorServer.DAL.GenericRepository`2.Add(TEntity model) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\DAL\GenericRepository.cs:line 23
+   at MemeGeneratorServer.Program.SetMeme(PacketHeader header, Connection connection, MemeDto message) in C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\Program.cs:line 56
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
