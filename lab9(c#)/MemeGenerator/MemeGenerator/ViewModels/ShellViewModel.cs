@@ -23,11 +23,11 @@ using MemeGenerator.Utils;
 
 namespace MemeGenerator.ViewModels
 {
-    public class MemeViewModel : Conductor<object>
+    public class ShellViewModel : Conductor<object>
     {
         public void LoadMemeCreatorPage()
         {
-            ActivateItem(new MemeCreatorViewModel());
+            ActivateItem(IoC.Get<MemeCreatorViewModel>());
         }
         public void LoadLoginPage()
         {

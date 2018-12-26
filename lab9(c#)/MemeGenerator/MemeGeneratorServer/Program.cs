@@ -51,7 +51,7 @@ namespace MemeGeneratorServer
         /// <param name="connection">The connection used by the incoming message</param>
         /// <param name="message">The message to be printed to the console</param>
       
-        private static async void SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
+        private static void SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
         {
             var memeContent = GenerateMeme(message);
 
@@ -65,7 +65,7 @@ namespace MemeGeneratorServer
             try
             {
                 _memeRepository.Add(meme);
-                await _memeRepository.SaveAsync();
+                 _memeRepository.SaveAsync();
                 Console.WriteLine("\nNew meme added to database:\n" +
                     "Meme title: " + meme.MemeTitle +
                     "\nCreated by id: " + meme.CreatedById);
@@ -80,10 +80,8 @@ namespace MemeGeneratorServer
 
         private static Image GenerateMeme(ImageWrapper message)
         {
-
             string firstText = message.TopText;
             string secondText = message.BottomText;
-
             var image = message.Image;
 
             RectangleF TopSize = new RectangleF(new Point(0, 0), new SizeF(image.Width, image.Height / 8));
@@ -112,36 +110,6 @@ namespace MemeGeneratorServer
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, ImageFormat.Gif);
             return ms.ToArray();
-        }
-
-        public static Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
-
-        private Bitmap BitmapImage2Bitmap(BitmapImage bitmapImage)
-        {
-            // BitmapImage bitmapImage = new BitmapImage(new Uri("../Images/test.png", UriKind.Relative));
-
-            using (MemoryStream outStream = new MemoryStream())
-            {
-                BitmapEncoder enc = new BmpBitmapEncoder();
-                enc.Frames.Add(BitmapFrame.Create(bitmapImage));
-                enc.Save(outStream);
-                System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(outStream);
-
-                return new Bitmap(bitmap);
-            }
-        }
-        public BitmapImage ToImage(byte[] array)
-        {
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.StreamSource = new System.IO.MemoryStream(array);
-            image.EndInit();
-            return image;
         }
     }
 }

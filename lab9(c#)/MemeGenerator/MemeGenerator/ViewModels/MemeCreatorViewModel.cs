@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace MemeGenerator.ViewModels
@@ -41,13 +42,25 @@ namespace MemeGenerator.ViewModels
                 NotifyOfPropertyChange(() => Image);
             }
         }
+        private BitmapImage _previewImage;
+
+        public BitmapImage PreviewImage
+        {
+            get { return _previewImage; }
+            set
+            {
+                _previewImage = value;
+                NotifyOfPropertyChange(() => PreviewImage);
+            }
+        }
+
         public string BottomText
         {
             get { return _bottomText; }
             set
             {
-                NotifyOfPropertyChange(() => BottomText);
                 _bottomText = value;
+                NotifyOfPropertyChange(() => BottomText);
             }
         }
 
@@ -64,8 +77,11 @@ namespace MemeGenerator.ViewModels
             TCPConnection serverConnection;
             try
             {
-                 serverConnection = TCPConnection.GetConnection(connectionInfo, customSendReceiveOptions);
-                 serverConnection.SendObject("Meme", meme);
+                 serverConnection = IoC.Get<Client>()?.ServerConnection;
+                if (serverConnection != null)
+                {
+                    serverConnection.SendObject("Meme", meme);
+                }
             }
             catch (Exception ex)
             {
@@ -74,8 +90,7 @@ namespace MemeGenerator.ViewModels
             }
 
 
-            //We have used comms so we make sure to call shutdown
-            NetworkComms.Shutdown();
+         
         }
 
         /// <summary>
@@ -85,6 +100,50 @@ namespace MemeGenerator.ViewModels
         {
             return image != null;
         }
+
+        //public void Preview()
+        //{
+        //    string firstText = TopText;
+        //    string secondText = BottomText;
+
+        //    Bitmap image = ImageHelper.BitmapImage2Bitmap(this.Image);
+
+        //    RectangleF TopSize = new RectangleF(new System.Drawing.Point(0, 0), new SizeF(image.Width, image.Height / 8));
+        //    int y = (int)(image.Height * (7.0 / 8.0));
+        //    RectangleF BottomSize = new RectangleF(new System.Drawing.Point(0, y), new SizeF(image.Width, image.Height / 8));
+
+        //    StringFormat format = new StringFormat();
+        //    format.LineAlignment = StringAlignment.Center;
+        //    format.Alignment = StringAlignment.Center;
+
+        //    using (Graphics graphics = Graphics.FromImage(image))
+        //    {
+        //        using (Font arialFont = new Font("Impact", image.Height / (14 / 1), System.Drawing.FontStyle.Bold, GraphicsUnit.Point))
+        //        {
+        //            graphics.DrawString(firstText, arialFont, Brushes.White, TopSize, format);
+        //            graphics.DrawString(secondText, arialFont, Brushes.White, BottomSize, format);
+        //        }
+        //    }
+        //    PreviewImage =  ImageHelper.Bitmap2BitmapImage(image);
+
+        //    Window wnd = new Window();
+        //    Grid grid = new Grid();
+        //    wnd.Height = 200;
+        //    wnd.Width = 150;
+        //    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(100) });
+        //    grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+        //    wnd.Content = grid;
+        //    Image img = image;
+           
+         
+          
+        //    Grid.SetRow(img, 0);
+ 
+        //    grid.Children.Add(img);
+         
+        //    wnd.Owner = MyMainWindow;
+        //    wnd.ShowDialog();
+        //}
 
         /// <summary>
         /// select image to generate your new meme

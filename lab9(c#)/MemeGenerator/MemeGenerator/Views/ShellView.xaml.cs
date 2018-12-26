@@ -23,9 +23,9 @@ namespace MemeGenerator.Views
     /// <summary>
     /// Interaction logic for MemeView.xaml
     /// </summary>
-    public partial class MemeView : Window
+    public partial class ShellView : Window
     {
-        public MemeView()
+        public ShellView()
         {
             InitializeComponent();
         }

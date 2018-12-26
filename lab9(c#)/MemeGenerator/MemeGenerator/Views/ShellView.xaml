@@ -1,4 +1,4 @@
-﻿<Window x:Class="MemeGenerator.Views.MemeView"
+﻿<Window x:Class="MemeGenerator.Views.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,13 +23,10 @@
         <DockPanel Grid.Column="0" Grid.ColumnSpan="6" >
             <Menu DockPanel.Dock="Top">
                 <MenuItem  Header="_Authentication  ">
-                    <MenuItem Name="Login" Header="_Login" />
-                    <MenuItem Name="Register" Header="_Register" />
+                    <MenuItem Name="LoadLoginPage" Header="_Login" />
+                    <MenuItem Name="LoadRegisterPage" Header="_Register" />
                 </MenuItem>
-                <MenuItem  Header="_Image ">
-                    <MenuItem Name="UploadImage" Header="_Upload" />
-                    <MenuItem Name="PickFromLibrary" Header="_Library" />
-                </MenuItem>
+                
                 
                 <MenuItem Name="LoadMemeCreatorPage" Header="_MemeCreator" />
             </Menu>

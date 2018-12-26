@@ -9,5 +9,10 @@ namespace MemeGenerator.ViewModels
 {
     public class LoginViewModel : Screen
     {
+        public void Login()
+        {
+            Client client = IoC.Get<Client>();
+            client.GetConnection();
+        }
     }
 }

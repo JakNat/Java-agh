@@ -5,8 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MemeGenerator.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Gray" > 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White" > 
     <Grid>
-            
+          
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+       
+            <ColumnDefinition Width="*"/>
+          
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="10" Grid.Column="1" Grid.Row="0" >User name</TextBlock>
+        <TextBox MaxHeight="25" HorizontalAlignment="Left" Name="UserName" Grid.Column="2" Grid.Row="0" Width="200"/>
+
+        <TextBlock Margin="10" Grid.Column="1" Grid.Row="1" >Password</TextBlock>
+        <TextBox  MaxHeight="25" HorizontalAlignment="Left"  Name="Password" Grid.Column="2" Grid.Row="1" Width="200"/>
+
+  
+        <Button Margin="10" Name="Login" Grid.Column="1" Grid.Row="3">Login</Button>
     </Grid>
 </UserControl>
