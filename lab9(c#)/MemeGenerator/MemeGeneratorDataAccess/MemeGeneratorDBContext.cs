@@ -12,9 +12,12 @@ namespace MemeGeneratorDataAccess
     {
         public MemeGeneratorDBContext() : base("MemeGeneratorDb")
         {
-            Database.SetInitializer<MemeGeneratorDBContext>(new CreateDatabaseIfNotExists<MemeGeneratorDBContext>());
+            Database.SetInitializer<MemeGeneratorDBContext>(new DropCreateDatabaseIfModelChanges<MemeGeneratorDBContext>());
         }
+
         public DbSet<Meme> Memes { get; set; }
+
+        public DbSet<User> Users { get; set; }
    
     }
 }

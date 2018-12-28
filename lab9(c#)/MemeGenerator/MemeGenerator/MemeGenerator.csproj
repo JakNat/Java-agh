@@ -92,7 +92,9 @@
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="Models\LoginDto.cs" />
     <Compile Include="Models\Meme.cs" />
+    <Compile Include="Models\RegisterDto.cs" />
     <Compile Include="Utils\ImageHelper.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MemeCreatorViewModel.cs" />

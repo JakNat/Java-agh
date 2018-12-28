@@ -1,32 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Windows.Media.Imaging;
+using Autofac;
 using MemeGenerator.Model;
 using MemeGenerator.Models;
 using MemeGeneratorDataAccess;
 using MemeGeneratorServer.DAL;
+using MemeGeneratorServer.Services;
 using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
- 
+
 namespace MemeGeneratorServer
 {
     class Program
     {
+        private static IContainer Container { get; set; }
         private static readonly MemeRepository _memeRepository = new MemeRepository(new MemeGeneratorDBContext());
 
         static void Main(string[] args)
         {
+            var builder = new ContainerBuilder();
+            //builder.RegisterType<ConsoleOutput>().As<IOutput>();
+            //builder.RegisterType<TodayWriter>().As<IDateWriter>();
+            Container = builder.Build();
+
             //Trigger the method SetMeme when a packet of type 'Meme' is received
             //We expect the incoming object to be a meme which we state explicitly by using <meme>
             NetworkComms.AppendGlobalIncomingPacketHandler<ImageWrapper>("Meme", SetMeme);
 
-            NetworkComms.AppendGlobalIncomingPacketHandler<ImageWrapper>("GetMeme", SetMeme);
+            NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>("Login", UserService.Login);
 
+            NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>("Register", UserService.Register);
 
             //Start listening for incoming connections
             Connection.StartListening(ConnectionType.TCP, new System.Net.IPEndPoint(System.Net.IPAddress.Any, 12345));
@@ -43,14 +48,20 @@ namespace MemeGeneratorServer
             //We have used NetworkComms so we should ensure that we correctly call shutdown
             NetworkComms.Shutdown();
         }
- 
+
+        private static void Register(PacketHeader packetHeader, Connection connection, RegisterDto incomingObject)
+        {
+            throw new NotImplementedException();
+        }
+
+       
         /// <summary>
         /// Writes the provided message to the console window
         /// </summary>
         /// <param name="header">The packet header associated with the incoming message</param>
         /// <param name="connection">The connection used by the incoming message</param>
         /// <param name="message">The message to be printed to the console</param>
-      
+
         private static void SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
         {
             var memeContent = GenerateMeme(message);

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MemeGeneratorServer.DAL
@@ -46,6 +45,7 @@ namespace MemeGeneratorServer.DAL
         public async Task SaveAsync()
         {
             await Context.SaveChangesAsync();
+            var s = 3;
         }
     }
 }

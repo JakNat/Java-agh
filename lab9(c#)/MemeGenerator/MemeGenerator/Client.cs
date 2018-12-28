@@ -20,7 +20,7 @@ namespace MemeGenerator
         public Client()
         {
             this.customSendReceiveOptions = new SendReceiveOptions<ProtobufSerializer>();
-            this.connectionInfo = new ConnectionInfo("192.168.1.5", 12345);
+            this.connectionInfo = new ConnectionInfo("192.168.103.36", 12345);
         }
         public Client(ConnectionInfo connectionInfo)
         {

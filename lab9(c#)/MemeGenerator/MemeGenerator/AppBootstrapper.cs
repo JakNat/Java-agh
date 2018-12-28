@@ -29,7 +29,6 @@ namespace MemeGenerator
 
             container.PerRequest<ShellViewModel>();
 
-      
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

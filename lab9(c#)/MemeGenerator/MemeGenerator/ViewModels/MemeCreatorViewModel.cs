@@ -158,7 +158,7 @@ namespace MemeGenerator.ViewModels
             if (op.ShowDialog() == true)
             {
                 Image = new BitmapImage(new Uri(op.FileName));
-                NotifyOfPropertyChange(() => Image);
+             //   NotifyOfPropertyChange(() => Image);
             }
 
             

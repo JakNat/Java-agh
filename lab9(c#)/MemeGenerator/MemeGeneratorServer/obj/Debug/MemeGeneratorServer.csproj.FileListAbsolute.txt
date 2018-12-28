@@ -30,3 +30,5 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\EntityFramework.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\System.Drawing.Common.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\Autofac.dll
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorServer\bin\Debug\Autofac.xml

@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using MemeGenerator.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,7 @@ namespace MemeGenerator.ViewModels
             set
             {
                 _userName = value;
-                _password = value;
-                var x = (MemeCreatorViewModel)IoC.GetInstance(typeof(MemeCreatorViewModel), "MemeCreator");
-                x.TopText = "dziala kurwaa";
+           
                 NotifyOfPropertyChange(() => UserName);
             }
         }
@@ -31,10 +30,33 @@ namespace MemeGenerator.ViewModels
             set
             {
                 _password = value;
-                var x = (MemeCreatorViewModel)IoC.GetInstance(typeof(MemeCreatorViewModel), "MemeCreator");
-                x.TopText = "dziala kurwaa";
                 NotifyOfPropertyChange(() => Password);
             }
+        }
+        private string _confirmPassword;
+
+        public string ConfirmPassword
+        {
+            get { return _confirmPassword; }
+            set
+            {
+                _confirmPassword = value;
+                NotifyOfPropertyChange(() => ConfirmPassword);
+            }
+        }
+
+
+        public void Register()
+        {
+            Client client = IoC.Get<Client>();
+            client.GetConnection();
+            var registerDto = new RegisterDto()
+            {
+                Login = UserName,
+                Password = Password,
+                ConfrimPassword = ConfirmPassword
+            };
+            client.ServerConnection.SendObject("Register", registerDto);
         }
 
     }

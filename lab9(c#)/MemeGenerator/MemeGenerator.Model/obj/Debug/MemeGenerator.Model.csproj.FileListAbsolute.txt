@@ -9,3 +9,4 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CopyComplete
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csprojAssemblyReference.cache

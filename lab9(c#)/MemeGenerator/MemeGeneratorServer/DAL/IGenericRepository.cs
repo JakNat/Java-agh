@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MemeGeneratorServer.DAL
 {
-     public interface IGenericRepository<T>
+    public interface IGenericRepository<T>
     {
         void Add(T model);
         Task<IEnumerable<T>> GetAllAsync();

@@ -13,3 +13,7 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAc
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.CopyComplete
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.InitialCreate.resources
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.GenerateResource.cache
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.addedusers.resources
+C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.uniqueUserNamecolumn.resources
