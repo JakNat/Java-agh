@@ -21,13 +21,22 @@ namespace MemeGenerator
 
             container.Singleton<IWindowManager, WindowManager>();
 
-            // register MemeCreatorViewModel as singleton
-            container.RegisterInstance(typeof(MemeCreatorViewModel),null,new MemeCreatorViewModel());
+           
 
             //  container.RegisterInstance(typeof(Client), new Client());
             container.RegisterInstance(typeof(Client), null, new Client());
 
             container.PerRequest<ShellViewModel>();
+
+            container.PerRequest<LoginViewModel>();
+
+            container.PerRequest<ConnectionViewModel>();
+
+            container.PerRequest<RegisterViewModel>();
+
+            // register MemeCreatorViewModel as singleton
+            container.RegisterInstance(typeof(MemeCreatorViewModel), null, new MemeCreatorViewModel());
+
 
         }
 

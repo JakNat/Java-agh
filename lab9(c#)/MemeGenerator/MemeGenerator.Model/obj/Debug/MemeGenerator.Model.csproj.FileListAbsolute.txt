@@ -10,3 +10,15 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CopyComplete
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\MemeGenerator.Model.dll.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\MemeGenerator.Model.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\MemeGenerator.Model.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CoreCompileInputs.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CopyComplete
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.pdb

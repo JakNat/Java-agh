@@ -72,8 +72,6 @@ namespace MemeGenerator.ViewModels
             Bitmap bitmap = ImageHelper.BitmapImage2Bitmap(Image);
             ImageWrapper meme = new ImageWrapper("meme", TopText, BottomText, bitmap);
 
-            SendReceiveOptions customSendReceiveOptions = new SendReceiveOptions<ProtobufSerializer>();
-            ConnectionInfo connectionInfo = new ConnectionInfo("192.168.1.5", 12345);
             TCPConnection serverConnection;
             try
             {

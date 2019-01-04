@@ -20,7 +20,7 @@ namespace MemeGenerator
         public Client()
         {
             this.customSendReceiveOptions = new SendReceiveOptions<ProtobufSerializer>();
-            this.connectionInfo = new ConnectionInfo("192.168.103.36", 12345);
+            this.connectionInfo = new ConnectionInfo("172.16.80.1", 12345);
         }
         public Client(ConnectionInfo connectionInfo)
         {
@@ -37,6 +37,7 @@ namespace MemeGenerator
             try
             {
                 ServerConnection = TCPConnection.GetConnection(connectionInfo, customSendReceiveOptions);
+                MessageBox.Show("You are connected to a server !");
             }
             catch (Exception)
             {
@@ -46,7 +47,7 @@ namespace MemeGenerator
 
         public void Shutdown()
         {
-            NetworkComms.Shutdown();
+            ServerConnection = null;
         }
 
 

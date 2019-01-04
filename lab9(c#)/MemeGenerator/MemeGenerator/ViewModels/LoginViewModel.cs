@@ -10,8 +10,15 @@ namespace MemeGenerator.ViewModels
 {
     public class LoginViewModel : Screen
     {
+        public LoginViewModel(Client client)
+        {
+            this.client = client;
+        }
+
+
         private string _userName;
         private string _password;
+        private readonly Client client;
 
         public string UserName
         {
@@ -33,17 +40,20 @@ namespace MemeGenerator.ViewModels
             }
         }
 
+        //public bool CanLogin(Client client)
+        //{
+        //    return client?.ServerConnection != null;
+        //}
 
         public void Login()
         {
-            Client client = IoC.Get<Client>();
-            client.GetConnection();
             var loginDto = new LoginDto()
             {
                 Login = UserName,
                 Password = Password
             };
-            client.ServerConnection.SendObject("Login", loginDto);
+           // client.GetConnection();
+            client.ServerConnection?.SendObject("Login", loginDto);
         }
     }
 }

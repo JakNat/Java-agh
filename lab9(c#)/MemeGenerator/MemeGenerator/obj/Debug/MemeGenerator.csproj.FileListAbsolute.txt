@@ -62,3 +62,43 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\D
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\ShellView.g.cs
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\ShellView.baml
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\MemeGenerator.exe.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\MemeGenerator.exe
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\MemeGenerator.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Autofac.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.DevExpress.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.Platform.Core.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.Platform.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\NetworkCommsDotNet.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\protobuf-net.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\System.Drawing.Common.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Autofac.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.Platform.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\Caliburn.Micro.Platform.Core.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\bin\Debug\protobuf-net.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\LoginView.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\MemeCreatorView.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\ShellView.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\RegisterView.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\App.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator_MarkupCompile.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator_MarkupCompile.lref
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\App.baml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\LoginView.baml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\MemeCreatorView.baml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\ShellView.baml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\RegisterView.baml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.g.resources
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.Properties.Resources.resources
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csproj.GenerateResource.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csproj.CoreCompileInputs.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.csproj.CopyComplete
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.exe
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\MemeGenerator.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\ConnectionView.g.cs
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator\obj\Debug\Views\ConnectionView.baml

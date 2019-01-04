@@ -25,6 +25,7 @@
                 <MenuItem  Header="_Authentication  ">
                     <MenuItem Name="LoadLoginPage" Header="_Login" />
                     <MenuItem Name="LoadRegisterPage" Header="_Register" />
+                    <MenuItem Name="Connect" Header="_Connect to server" />
                 </MenuItem>
                 
                 

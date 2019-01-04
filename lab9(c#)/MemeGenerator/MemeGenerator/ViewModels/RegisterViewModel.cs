@@ -13,6 +13,11 @@ namespace MemeGenerator.ViewModels
         private string _userName = "xd";
         private string _password = "lol";
 
+        public RegisterViewModel(Client client)
+        {
+            this.client = client;
+        }
+
         public string UserName
         {
             get { return _userName; }
@@ -34,6 +39,7 @@ namespace MemeGenerator.ViewModels
             }
         }
         private string _confirmPassword;
+        private readonly Client client;
 
         public string ConfirmPassword
         {
@@ -45,18 +51,20 @@ namespace MemeGenerator.ViewModels
             }
         }
 
-
-        public void Register()
+        public bool CanRegister(bool canRegister, string password, string userName)
         {
-            Client client = IoC.Get<Client>();
-            client.GetConnection();
+            return client.ServerConnection != null;
+        }
+
+        public void Register(bool canRegister, string password, string userName)
+        {
             var registerDto = new RegisterDto()
             {
                 Login = UserName,
                 Password = Password,
                 ConfrimPassword = ConfirmPassword
             };
-            client.ServerConnection.SendObject("Register", registerDto);
+            client.ServerConnection?.SendObject("Register", registerDto);
         }
 
     }

@@ -17,3 +17,22 @@ C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAc
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.GenerateResource.cache
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.addedusers.resources
 C:\Users\bobotb\Desktop\java\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.uniqueUserNamecolumn.resources
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGeneratorDataAccess.dll.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGeneratorDataAccess.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGeneratorDataAccess.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGenerator.Model.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGenerator.Model.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\MemeGenerator.Model.dll.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.InitialCreate.resources
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.addedusers.resources
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.Migrations.uniqueUserNamecolumn.resources
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.GenerateResource.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.csproj.CopyComplete
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGeneratorDataAccess\obj\Debug\MemeGeneratorDataAccess.pdb

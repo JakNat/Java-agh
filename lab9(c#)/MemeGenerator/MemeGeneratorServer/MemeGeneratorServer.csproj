@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MemeGeneratorServer</RootNamespace>
     <AssemblyName>MemeGeneratorServer</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -66,8 +67,10 @@
     <Compile Include="DAL\IGenericRepository.cs" />
     <Compile Include="DAL\MemeRepository.cs" />
     <Compile Include="DAL\UserRepository.cs" />
+    <Compile Include="Services\MemeService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="UserAuthenticationService.cs" />
   </ItemGroup>
