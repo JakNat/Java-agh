@@ -20,7 +20,7 @@ namespace MemeGenerator.Client.Tests
         
             // services
             //builder.RegisterType<UserService>().As<IUserService>();
-            //builder.RegisterType<MemeService>().As<IMemeService>();
+            builder.RegisterType<MemeService>().As<IMemeService>();
 
             // server
             builder.RegisterType<ServerApp>().AsSelf();

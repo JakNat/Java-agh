@@ -71,21 +71,21 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MemeGenerator.Client\MemeGenerator.Client.csproj">
+      <Project>{56a44e84-5d3a-420b-aca1-fe7f2161bee0}</Project>
+      <Name>MemeGenerator.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemeGenerator.DataAccessLayer\MemeGenerator.DataAccessLayer.csproj">
+      <Project>{628528b7-997b-41fe-8c7d-b495b56b4ba8}</Project>
+      <Name>MemeGenerator.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MemeGenerator.Model\MemeGenerator.Model.csproj">
       <Project>{5578dfce-0ff9-4671-8416-0d6a962f492d}</Project>
       <Name>MemeGenerator.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MemeGeneratorDataAccess\MemeGeneratorDataAccess.csproj">
-      <Project>{628528b7-997b-41fe-8c7d-b495b56b4ba8}</Project>
-      <Name>MemeGeneratorDataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MemeGeneratorServer\MemeGenerator.Server.csproj">
+    <ProjectReference Include="..\MemeGenerator.Server\MemeGenerator.Server.csproj">
       <Project>{fb52ca65-abd3-4a13-8702-600a863c0dea}</Project>
       <Name>MemeGenerator.Server</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MemeGenerator\MemeGenerator.Client.csproj">
-      <Project>{56a44e84-5d3a-420b-aca1-fe7f2161bee0}</Project>
-      <Name>MemeGenerator.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
