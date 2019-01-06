@@ -1,53 +1,69 @@
-﻿using MemeGenerator.Model;
-using MemeGenerator.Models;
-using MemeGeneratorDataAccess;
-using MemeGeneratorServer.DAL;
+﻿using MemeGenerator.Model.Type;
+using MemeGenerator.Model.Dto;
+using MemeGenerator.ClientDataAccess;
+using MemeGenerator.ClientDataAccess.Repositories;
 using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
 using System;
+using System.Linq;
 
-namespace MemeGeneratorServer.Services
+namespace MemeGenerator.Client.Server.Services
 {
-    public static class UserService
+    public class UserService : IUserService
     {
-        private static UserRepository _userRepository = new UserRepository(new MemeGeneratorDBContext());
+        private readonly IGenericRepository<User> userRepository;
 
-        public static void Login(PacketHeader packetHeader, Connection connection, LoginDto incomingObject)
+        public UserService(IGenericRepository<User> userRepository)
         {
-            User user = null;
+            this.userRepository = userRepository;
+        }
+
+        public void LoginRequest(PacketHeader packetHeader, Connection connection, LoginDto incomingObject)
+        {
             Console.WriteLine("\nLogin request received..");
-            try
-            {
-                user = _userRepository.GetByUserName(incomingObject.Login);
-              
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Invalid login request: user doesn't exist");
-            }
+
+            // getting requested user
+            User user = userRepository
+                .GetAllByCondition(x => x.UserName == incomingObject.Login)
+                .FirstOrDefault();
+
             if(user != null)
             {
                 if(String.Equals(user.Password, incomingObject.Password))
                 {
                     Console.WriteLine("Login request successful:");
-                    Console.WriteLine("User: +" + incomingObject.Login + " logged to a server");
+                    Console.WriteLine("User: '{0}' logged to a server.",incomingObject.Login);
 
+                    connection.SendObject("LoginResponse", "You are logged.");
                 }
                 else
                 {
-                    Console.WriteLine("Invalid login request: wrong password");
+                    Console.WriteLine("Invalid login request: wrong password.");
+                    connection.SendObject("LoginResponse", "Wrong password.");
                 }
             }
             else
             {
-                Console.WriteLine("Invalidd login request: user doesn't exist");
+                Console.WriteLine("Invalidd login request: user doesn't exist.");
+                connection.SendObject("LoginResponse", "User douesn't exist.");
             }
         }
 
-        internal static void Register(PacketHeader packetHeader, Connection connection, RegisterDto incomingObject)
+        public async void RegisterRequest(PacketHeader packetHeader, Connection connection, RegisterDto incomingObject)
         {
             Console.WriteLine("\nRegistration request...");
-            if(incomingObject.Password == incomingObject.ConfrimPassword)
+
+            // getting requested user
+            User user = userRepository
+                .GetAllByCondition(x => x.UserName == incomingObject.Login)
+                .FirstOrDefault();
+            if (user != null)
+            {
+                connection.SendObject("RegisterResponse", "User already exists.");
+                return;
+            }
+
+            if (incomingObject.Password == incomingObject.ConfrimPassword)
             {
                 User newUser = new User()
                 {
@@ -56,21 +72,18 @@ namespace MemeGeneratorServer.Services
                     CreatedDate = DateTime.Now,
 
                 };
-                try
-                {
-                    _userRepository.Add(newUser);
-                    _userRepository.SaveChanges();
-                    Console.WriteLine("New user added: " + incomingObject.Login);
-                }
-                catch (Exception ex)
-                {
-                }
+                userRepository.Add(newUser);
+
+               
+                await userRepository.SaveAsync();
+                Console.WriteLine("New user added: '{0}'",incomingObject.Login);
+                connection.SendObject("RegisterResponse", "You are registered.");
             }
             else
             {
                 Console.WriteLine("Not same passwords");
+                connection.SendObject("RegisterResponse", "Error.");
             }
- 
         }
     }
 }

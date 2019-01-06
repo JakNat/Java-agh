@@ -1,16 +1,23 @@
-﻿using NetworkCommsDotNet;
+﻿using MemeGenerator.Model.Dto;
+using MemeGenerator.Client.Server.Services;
+using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
 using System;
 using static NetworkCommsDotNet.NetworkComms;
 
-namespace MemeGeneratorServer
+namespace MemeGenerator.Client.Server
 {
-    public class Server
+    public class ServerApp
     {
+        private readonly IMemeService memeService;
+        private readonly IUserService userService;
 
-        public Server()
+        public ServerApp(IMemeService memeService,
+            IUserService userService
+            )
         {
-            
+            this.memeService = memeService;
+            this.userService = userService;
         }
 
         public void StartListening()
@@ -23,6 +30,17 @@ namespace MemeGeneratorServer
             foreach (System.Net.IPEndPoint localEndPoint in Connection.ExistingLocalListenEndPoints(ConnectionType.TCP))
                 Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
         }
+
+        public void RegisterIncomingPackerHandlers()
+        {
+            //memeService requests
+            NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>("Meme", memeService.GenerateMemeRequest);
+
+            //userService requests
+            NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>("Login", userService.LoginRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>("Register", userService.RegisterRequest);
+        }
+
 
         /// <summary>
         /// We have used NetworkComms so we should ensure that we correctly call shutdown

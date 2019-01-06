@@ -6,13 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MemeGenerator.ViewModels
+namespace MemeGenerator.Client.ViewModels
 {
     public class ConnectionViewModel : Screen
     {
-        private string _ipAdress = "172.16.80.1";
+        private readonly ClientApp client;
 
-        public ConnectionViewModel(Client client)
+        private string _ipAdress = "192.168.1.8";
+        private int _port = 12345;
+        public ConnectionViewModel(ClientApp client)
         {
             this.client = client;
         }
@@ -25,9 +27,6 @@ namespace MemeGenerator.ViewModels
                 NotifyOfPropertyChange(() => IpAdress);
             }
         }
-
-        private int _port = 12345;
-        private readonly Client client;
 
         public int Port
         {

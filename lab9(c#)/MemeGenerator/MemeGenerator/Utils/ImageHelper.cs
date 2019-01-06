@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 
-namespace MemeGenerator.Utils
+namespace MemeGenerator.Client.Utils
 {
     public static class ImageHelper
     {

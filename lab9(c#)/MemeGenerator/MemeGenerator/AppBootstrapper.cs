@@ -1,10 +1,10 @@
 ﻿using Caliburn.Micro;
-using MemeGenerator.ViewModels;
+using MemeGenerator.Client.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 
-namespace MemeGenerator
+namespace MemeGenerator.Client
 {
     public class AppBootstrapper : BootstrapperBase
     {
@@ -21,10 +21,7 @@ namespace MemeGenerator
 
             container.Singleton<IWindowManager, WindowManager>();
 
-           
-
-            //  container.RegisterInstance(typeof(Client), new Client());
-            container.RegisterInstance(typeof(Client), null, new Client());
+            container.RegisterInstance(typeof(ClientApp), null, new ClientApp());
 
             container.PerRequest<ShellViewModel>();
 
@@ -34,10 +31,7 @@ namespace MemeGenerator
 
             container.PerRequest<RegisterViewModel>();
 
-            // register MemeCreatorViewModel as singleton
-            container.RegisterInstance(typeof(MemeCreatorViewModel), null, new MemeCreatorViewModel());
-
-
+            container.PerRequest<MemeCreatorViewModel>();
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

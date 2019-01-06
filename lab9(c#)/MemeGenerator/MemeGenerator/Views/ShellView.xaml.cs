@@ -1,4 +1,4 @@
-﻿using MemeGenerator.ViewModels;
+﻿using MemeGenerator.Client.ViewModels;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 
 
 
-namespace MemeGenerator.Views
+namespace MemeGenerator.Client.Views
 {
     /// <summary>
     /// Interaction logic for MemeView.xaml

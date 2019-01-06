@@ -1,4 +1,4 @@
-namespace MemeGeneratorDataAccess.Migrations
+namespace MemeGenerator.Client.ServerDataAccess.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

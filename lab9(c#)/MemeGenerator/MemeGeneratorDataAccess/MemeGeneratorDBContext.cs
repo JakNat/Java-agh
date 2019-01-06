@@ -1,12 +1,7 @@
-﻿using MemeGenerator.Model;
-using System;
-using System.Collections.Generic;
+﻿using MemeGenerator.Model.Type;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MemeGeneratorDataAccess
+namespace MemeGenerator.ClientDataAccess
 {
     public class MemeGeneratorDBContext : DbContext
     {

@@ -1,28 +1,28 @@
 ﻿using Caliburn.Micro;
-using MemeGenerator.Models;
-using MemeGenerator.Utils;
+using MemeGenerator.Model.Dto;
+using MemeGenerator.Client.Utils;
 using Microsoft.Win32;
-using NetworkCommsDotNet;
-using NetworkCommsDotNet.Connections.TCP;
-using NetworkCommsDotNet.DPSBase;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using MemeGenerator.Client;
 
-namespace MemeGenerator.ViewModels
+namespace MemeGenerator.Client.ViewModels
 {
-   public class MemeCreatorViewModel : Screen
+    public class MemeCreatorViewModel : Screen
     {
+        private readonly ClientApp client;
 
         private string _topText = "Top text";
         private string _bottomText = "Bottom text";
         private BitmapImage _image;
+
+        public MemeCreatorViewModel(ClientApp client)
+        {
+            this.client = client;
+        }
 
         public string TopText
         {
@@ -40,9 +40,11 @@ namespace MemeGenerator.ViewModels
             {
                 _image = value;
                 NotifyOfPropertyChange(() => Image);
+                NotifyOfPropertyChange(() => CanCreateByServer);
             }
         }
         private BitmapImage _previewImage;
+        
 
         public BitmapImage PreviewImage
         {
@@ -51,6 +53,7 @@ namespace MemeGenerator.ViewModels
             {
                 _previewImage = value;
                 NotifyOfPropertyChange(() => PreviewImage);
+                NotifyOfPropertyChange(() => CanCreateByServer);
             }
         }
 
@@ -65,38 +68,37 @@ namespace MemeGenerator.ViewModels
         }
 
         /// <summary>
-        /// sending your meme properties to a MemeGeneratorServer
+        /// sending your meme properties to a MemeGenerator.Server
         /// </summary>
-        public async void CreateByServer(BitmapImage image)
+        public async void CreateByServer()
         {
             Bitmap bitmap = ImageHelper.BitmapImage2Bitmap(Image);
-            ImageWrapper meme = new ImageWrapper("meme", TopText, BottomText, bitmap);
+            MemeDto meme = new MemeDto("meme", TopText, BottomText, bitmap);
 
-            TCPConnection serverConnection;
             try
             {
-                 serverConnection = IoC.Get<Client>()?.ServerConnection;
-                if (serverConnection != null)
-                {
-                    serverConnection.SendObject("Meme", meme);
-                }
+                string response = await Task.Run(() => RegisterRequest(meme));
+                MessageBox.Show("Server reponse: " + response);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Cannot connect to a server" +
-                    "\nException message: " + ex.Message);
+                MessageBox.Show("server not response");
             }
+        }
 
-
-         
+        private async Task<string> RegisterRequest(MemeDto memeDto)
+        {
+            return client.ServerConnection?
+              .SendReceiveObject<MemeDto, string>
+              ("Meme", "MemeResponse", 10000, memeDto);
         }
 
         /// <summary>
         /// turn on or turn of "Generetae Meme" button
         /// </summary>
-        public bool CanCreateByServer(BitmapImage image)
+        public bool CanCreateByServer
         {
-            return image != null;
+            get { return Image != null && client.ServerConnection != null; }
         }
 
         //public void Preview()
@@ -148,18 +150,17 @@ namespace MemeGenerator.ViewModels
         /// </summary>
         public void UploadImage()
         {
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Select a picture";
-            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+            OpenFileDialog op = new OpenFileDialog
+            {
+                Title = "Select a picture",
+                Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
               "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
-              "Portable Network Graphic (*.png)|*.png";
+              "Portable Network Graphic (*.png)|*.png"
+            };
             if (op.ShowDialog() == true)
             {
                 Image = new BitmapImage(new Uri(op.FileName));
-             //   NotifyOfPropertyChange(() => Image);
             }
-
-            
         }
     }
 }

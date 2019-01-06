@@ -1,26 +1,22 @@
 ﻿using System;
 using Autofac;
-using MemeGenerator.Models;
-using MemeGeneratorServer.Services;
+using MemeGenerator.Client.Server.Services;
 
-namespace MemeGeneratorServer
+namespace MemeGenerator.Client.Server
 {
     class Program
     {
-        private static IContainer Container { get; set; }
-
         static void Main(string[] args)
         {
-            var builder = new ContainerBuilder();
-            Container = builder.Build();
+            //build our container
+            var bootstrapper = new Bootstrapper();
+            var container = bootstrapper.Bootstrap();
+            
+            //taking our server from container
+            var server = container.Resolve<ServerApp>();
 
-            Server server = new Server();
-
-            //Trigger the method SetMeme when a packet of type 'Meme' is received
-            //We expect the incoming object to be a meme which we state explicitly by using <meme>
-            server.AppendGlobalIncomingPacketHandler<ImageWrapper>("Meme", MemeService.SetMeme);
-            server.AppendGlobalIncomingPacketHandler<LoginDto>("Login", UserService.Login);
-            server.AppendGlobalIncomingPacketHandler<RegisterDto>("Register", UserService.Register);
+            //register all requests
+            server.RegisterIncomingPackerHandlers();
 
             server.StartListening();
            
@@ -30,11 +26,6 @@ namespace MemeGeneratorServer
 
             //We have used NetworkComms so we should ensure that we correctly call shutdown
             server.ShutDown();
-        }
-
-     
-
-       
-       
+        }   
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MemeGenerator.Views
+namespace MemeGenerator.Client.Views
 {
     /// <summary>
     /// Interaction logic for RegisterView.xaml

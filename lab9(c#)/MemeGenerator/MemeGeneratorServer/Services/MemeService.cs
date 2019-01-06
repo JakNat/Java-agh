@@ -2,27 +2,28 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using MemeGenerator.Model;
-using MemeGenerator.Models;
-using MemeGeneratorDataAccess;
-using MemeGeneratorServer.DAL;
+using MemeGenerator.Model.Type;
+using MemeGenerator.Model.Dto;
+using MemeGenerator.ClientDataAccess;
+using MemeGenerator.ClientDataAccess.Repositories;
 using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
 
-namespace MemeGeneratorServer.Services
+namespace MemeGenerator.Client.Server.Services
 {
-    public static class MemeService
+    public class MemeService : IMemeService
     {
-        private static readonly MemeRepository _memeRepository = new MemeRepository(new MemeGeneratorDBContext());
+        private readonly IGenericRepository<Meme> memeRepository;
+
+        public MemeService(IGenericRepository<Meme> memeRepository)
+        {
+            this.memeRepository = memeRepository;
+        }
 
         /// <summary>
-        /// Writes the provided message to the console window
+        /// Generete new meme by a server and add to a database
         /// </summary>
-        /// <param name="header">The packet header associated with the incoming message</param>
-        /// <param name="connection">The connection used by the incoming message</param>
-        /// <param name="message">The message to be printed to the console</param>
-
-        public static void SetMeme(PacketHeader header, Connection connection, ImageWrapper message)
+        public async void GenerateMemeRequest(PacketHeader header, Connection connection, MemeDto message)
         {
             var memeContent = GenerateMeme(message);
 
@@ -35,21 +36,22 @@ namespace MemeGeneratorServer.Services
 
             try
             {
-                _memeRepository.Add(meme);
-                _memeRepository.SaveAsync();
+                memeRepository.Add(meme);
+                await memeRepository.SaveAsync();
                 Console.WriteLine("\nNew meme added to database:\n" +
                     "Meme title: " + meme.MemeTitle +
                     "\nCreated by id: " + meme.CreatedById);
+                connection.SendObject("MemeResponse", "Meme added.");
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nError :( \nmessage:  " + ex.Message);
+                connection.SendObject("MemeResponse", "Error ocured.");
             }
-
-
         }
 
-        private static Image GenerateMeme(ImageWrapper message)
+        private Image GenerateMeme(MemeDto message)
         {
             string firstText = message.TopText;
             string secondText = message.BottomText;
@@ -76,7 +78,7 @@ namespace MemeGeneratorServer.Services
             return message.Image;
         }
 
-        public static byte[] imageToByteArray(Image imageIn)
+        public byte[] imageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, ImageFormat.Gif);

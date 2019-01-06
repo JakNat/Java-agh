@@ -1,27 +1,6 @@
 ﻿using Caliburn.Micro;
-using MemeGenerator.Views;
-using Microsoft.Win32;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Windows.Media.Imaging;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Controls;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using MemeGenerator.Models;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using NetworkCommsDotNet;
-using System.Linq;
-using NetworkCommsDotNet.DPSBase;
-using NetworkCommsDotNet.Connections.TCP;
-using System.Drawing;
-using MemeGenerator.Utils;
 
-namespace MemeGenerator.ViewModels
+namespace MemeGenerator.Client.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
@@ -29,7 +8,7 @@ namespace MemeGenerator.ViewModels
         private readonly LoginViewModel loginViewModel;
         private readonly RegisterViewModel registerViewModel;
         private readonly ConnectionViewModel connectionViewModel;
-        private readonly Client client;
+        private readonly ClientApp client;
 
         public ShellViewModel
             (
@@ -37,7 +16,7 @@ namespace MemeGenerator.ViewModels
             LoginViewModel loginViewModel,
             RegisterViewModel registerViewModel,
             ConnectionViewModel connectionViewModel,
-            Client client
+            ClientApp client
             )
         {
             this.memeCreatorViewModel = memeCreatorViewModel;

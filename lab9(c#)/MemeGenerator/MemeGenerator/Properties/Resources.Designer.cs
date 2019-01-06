@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MemeGenerator.Properties {
+namespace MemeGenerator.Client.Server.Properties {
     using System;
     
     
