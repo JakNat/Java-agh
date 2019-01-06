@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using MemeGenerator.Model;
 using MemeGenerator.Model.Dto;
 using System;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ namespace MemeGenerator.Client.ViewModels
         {
             return client.ServerConnection?
               .SendReceiveObject<LoginDto, string>
-              ("Login", "LoginResponse", 10000, loginDto);
+              (PacketType.Login, PacketType.LoginResponse, 10000, loginDto);
         }
     }
 }

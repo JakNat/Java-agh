@@ -77,15 +77,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MemeGenerator.Model\MemeGenerator.Model.csproj">
-      <Project>{5578dfce-0ff9-4671-8416-0d6a962f492d}</Project>
-      <Name>MemeGenerator.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MemeGenerator.DataAccessLayer\MemeGenerator.DataAccessLayer.csproj">
       <Project>{628528b7-997b-41fe-8c7d-b495b56b4ba8}</Project>
       <Name>MemeGenerator.DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MemeGenerator.Model\MemeGenerator.Model.csproj">
+      <Project>{5578dfce-0ff9-4671-8416-0d6a962f492d}</Project>
+      <Name>MemeGenerator.Model</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

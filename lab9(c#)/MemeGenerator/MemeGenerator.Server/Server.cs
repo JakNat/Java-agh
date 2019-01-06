@@ -4,6 +4,7 @@ using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
 using System;
 using static NetworkCommsDotNet.NetworkComms;
+using MemeGenerator.Model;
 
 namespace MemeGenerator.Client.Server
 {
@@ -34,11 +35,12 @@ namespace MemeGenerator.Client.Server
         public void RegisterIncomingPackerHandlers()
         {
             //memeService requests
-            NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>("Meme", memeService.GenerateMemeRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>(PacketType.CreateMeme, memeService.GenerateMemeRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByUser, memeService.GetMemesByUSerRequest)
 
             //userService requests
-            NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>("Login", userService.LoginRequest);
-            NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>("Register", userService.RegisterRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>(PacketType.Login, userService.LoginRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>(PacketType.Register, userService.RegisterRequest);
         }
 
 

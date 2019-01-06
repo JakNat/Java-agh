@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{56A44E84-5D3A-420B-ACA1-FE7F2161BEE0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MemeGenerator</RootNamespace>
+    <RootNamespace>MemeGenerator.Client</RootNamespace>
     <AssemblyName>MemeGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -97,6 +97,7 @@
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MemeCreatorViewModel.cs" />
+    <Compile Include="ViewModels\MemeLibraryViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ConnectionView.xaml.cs">
@@ -107,6 +108,9 @@
     </Compile>
     <Compile Include="Views\MemeCreatorView.xaml.cs">
       <DependentUpon>MemeCreatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemeLibraryView.xaml.cs">
+      <DependentUpon>MemeLibraryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -158,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MemeCreatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemeLibraryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

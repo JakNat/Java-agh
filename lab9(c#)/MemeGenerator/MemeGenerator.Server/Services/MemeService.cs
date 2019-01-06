@@ -84,5 +84,10 @@ namespace MemeGenerator.Client.Server.Services
             imageIn.Save(ms, ImageFormat.Gif);
             return ms.ToArray();
         }
+
+        public void GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, string incomingObject)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

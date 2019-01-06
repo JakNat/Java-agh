@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using MemeGenerator.Client;
+using MemeGenerator.Model;
 
 namespace MemeGenerator.Client.ViewModels
 {
@@ -90,7 +91,7 @@ namespace MemeGenerator.Client.ViewModels
         {
             return client.ServerConnection?
               .SendReceiveObject<MemeDto, string>
-              ("Meme", "MemeResponse", 10000, memeDto);
+              (PacketType.Register, PacketType.RegisterResponse, 10000, memeDto);
         }
 
         /// <summary>
