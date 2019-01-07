@@ -56,7 +56,6 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Clie
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\protobuf-net.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\System.Drawing.Common.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\EntityFramework.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\MemeGenerator.Model.pdb
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\MemeGenerator.Model.dll.config
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\Autofac.xml
@@ -64,7 +63,6 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Clie
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\Caliburn.Micro.Platform.xml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\Caliburn.Micro.Platform.Core.xml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\protobuf-net.xml
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\bin\Debug\EntityFramework.xml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.Client.csprojAssemblyReference.cache
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\Views\ConnectionView.g.cs
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\Views\LoginView.g.cs
@@ -82,9 +80,11 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Clie
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\Views\ShellView.baml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\Views\RegisterView.baml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.g.resources
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.Properties.Resources.resources
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.Client.csproj.GenerateResource.cache
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.Client.csproj.CoreCompileInputs.cache
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.Client.csproj.CopyComplete
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.exe
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.pdb
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\Views\MemeLibraryView.g.cs
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\Views\MemeLibraryView.baml
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\MemeGenerator.Client.Properties.Resources.resources

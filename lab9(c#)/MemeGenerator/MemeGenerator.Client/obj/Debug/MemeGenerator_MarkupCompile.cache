@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\
-MemeGenerator
+MemeGenerator.Client
 none
 false
 DEBUG;TRACE
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\App.xaml
-547646802
+61850958283
 
-1722593884
+19858053338
 80-523862204
-Views\ConnectionView.xaml;Views\LoginView.xaml;Views\MemeCreatorView.xaml;Views\ShellView.xaml;Views\RegisterView.xaml;
+Views\ConnectionView.xaml;Views\LoginView.xaml;Views\MemeCreatorView.xaml;Views\MemeLibraryView.xaml;Views\ShellView.xaml;Views\RegisterView.xaml;
 
 False
 

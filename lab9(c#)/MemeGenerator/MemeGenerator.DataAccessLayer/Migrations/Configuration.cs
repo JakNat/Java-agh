@@ -1,19 +1,18 @@
-namespace MemeGenerator.DataAccessLayer.Migrations
+namespace MemeGeneratorDataAccess.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MemeGeneratorDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MemeGenerator.DataAccessLayer.MemeGeneratorDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MemeGeneratorDataAccess.MemeGeneratorDBContext";
         }
 
-        protected override void Seed(MemeGeneratorDBContext context)
+        protected override void Seed(MemeGenerator.DataAccessLayer.MemeGeneratorDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

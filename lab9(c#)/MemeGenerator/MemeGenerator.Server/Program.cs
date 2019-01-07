@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using Autofac;
 using MemeGenerator.Client.Server.Services;
+using MemeGenerator.DataAccessLayer;
 
 namespace MemeGenerator.Client.Server
 {
@@ -8,6 +10,7 @@ namespace MemeGenerator.Client.Server
     {
         static void Main(string[] args)
         {
+            
             //build our container
             var bootstrapper = new Bootstrapper();
             var container = bootstrapper.Bootstrap();

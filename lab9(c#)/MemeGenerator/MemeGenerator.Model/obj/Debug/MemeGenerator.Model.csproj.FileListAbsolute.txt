@@ -92,4 +92,3 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Mode
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\zh-Hans\StreamJsonRpc.resources.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\zh-Hant\StreamJsonRpc.resources.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\NetworkCommsDotNet.dll
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csprojAssemblyReference.cache

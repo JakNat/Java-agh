@@ -36,7 +36,7 @@ namespace MemeGenerator.Client.Server
         {
             //memeService requests
             NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>(PacketType.CreateMeme, memeService.GenerateMemeRequest);
-            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByUser, memeService.GetMemesByUSerRequest)
+            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByUser, memeService.GetMemesByUSerRequest);
 
             //userService requests
             NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>(PacketType.Login, userService.LoginRequest);

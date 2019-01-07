@@ -11,9 +11,8 @@ namespace MemeGenerator.Model.Type
     public class User
     {
         [Key]
-        public int UserId { get; set; }
+        public int Id { get; set; }
         [Required]
-        [Index(IsUnique = true)]
         [StringLength(450)]
         public string UserName { get; set; }
         [Required]
@@ -21,5 +20,6 @@ namespace MemeGenerator.Model.Type
         [EmailAddress]
         public string Email { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public ICollection<Meme> Memes { get; set; }
     }
 }

@@ -49,21 +49,6 @@ namespace MemeGenerator.Client
             }
         }
 
-        public void RegisterIncomingPackerHandlers()
-        {
-            //memeService requests
-            //ServerConnection.AppendIncomingPacketHandler<MemeDto>("MemeResponse", memeService.GenerateMemeRequest);
-
-            ////userService requests
-            //ServerConnection.AppendIncomingPacketHandler<string>("LoginResponse", userService.LoginRequest);
-            ServerConnection.AppendIncomingPacketHandler<string>("RegisterResponse", RegisterResonse);
-        }
-
-        private void RegisterResonse(PacketHeader packetHeader, Connection connection, string incomingObject)
-        {
-            MessageBox.Show(incomingObject);
-        }
-
         public void Shutdown()
         {
             ServerConnection = null;

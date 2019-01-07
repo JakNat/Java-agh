@@ -36,8 +36,8 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Test
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.Core.dll
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.pdb
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.exe.config
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.xml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.xml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.Core.xml
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.pdb
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.exe.config

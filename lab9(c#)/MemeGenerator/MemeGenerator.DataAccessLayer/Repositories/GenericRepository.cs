@@ -39,6 +39,9 @@ namespace MemeGenerator.DataAccessLayer.Repositories
             return Context.Set<TEntity>().Where(predicate);
         }
 
+       
+        
+
         public bool HasChanges()
         {
             return Context.ChangeTracker.HasChanges();
@@ -52,6 +55,19 @@ namespace MemeGenerator.DataAccessLayer.Repositories
         public async Task SaveAsync()
         {
             await Context.SaveChangesAsync();
+        }
+
+        public IEnumerable<TEntity> Include(params Expression<Func<TEntity, object>>[] includes)
+        {
+            IDbSet<TEntity> dbSet = Context.Set<TEntity>();
+
+            IEnumerable<TEntity> query = null;
+            foreach (var include in includes)
+            {
+                query = dbSet.Include(include);
+            }
+
+            return query ?? dbSet;
         }
     }
 }

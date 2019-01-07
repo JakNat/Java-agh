@@ -78,7 +78,7 @@ namespace MemeGenerator.Client.ViewModels
 
             try
             {
-                string response = await Task.Run(() => RegisterRequest(meme));
+                string response = await Task.Run(() => CreateRequest(meme));
                 MessageBox.Show("Server reponse: " + response);
             }
             catch (Exception)
@@ -87,11 +87,11 @@ namespace MemeGenerator.Client.ViewModels
             }
         }
 
-        private string RegisterRequest(MemeDto memeDto)
+        private string CreateRequest(MemeDto memeDto)
         {
             return client.ServerConnection?
               .SendReceiveObject<MemeDto, string>
-              (PacketType.Register, PacketType.RegisterResponse, 10000, memeDto);
+              (PacketType.CreateMeme, PacketType.CreateMemeResponse, 20000, memeDto);
         }
 
         /// <summary>

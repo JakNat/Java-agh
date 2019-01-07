@@ -50,17 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MemeGeneratorDBContext.cs" />
-    <Compile Include="Migrations\201812251049236_InitialCreate.cs" />
-    <Compile Include="Migrations\201812251049236_InitialCreate.Designer.cs">
-      <DependentUpon>201812251049236_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812271708229_added users.cs" />
-    <Compile Include="Migrations\201812271708229_added users.Designer.cs">
-      <DependentUpon>201812271708229_added users.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812271723225_unique UserName column.cs" />
-    <Compile Include="Migrations\201812271723225_unique UserName column.Designer.cs">
-      <DependentUpon>201812271723225_unique UserName column.cs</DependentUpon>
+    <Compile Include="Migrations\201901061334409_InitialCreate.cs" />
+    <Compile Include="Migrations\201901061334409_InitialCreate.Designer.cs">
+      <DependentUpon>201901061334409_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,14 +70,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812251049236_InitialCreate.resx">
-      <DependentUpon>201812251049236_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812271708229_added users.resx">
-      <DependentUpon>201812271708229_added users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812271723225_unique UserName column.resx">
-      <DependentUpon>201812271723225_unique UserName column.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201901061334409_InitialCreate.resx">
+      <DependentUpon>201901061334409_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

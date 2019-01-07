@@ -14,5 +14,7 @@ namespace MemeGenerator.DataAccessLayer.Repositories
         void Remove(T model);
         Task SaveAsync();
         IEnumerable<T> GetAllByCondition(Expression<Func<T, bool>> predicate);
+
+        IEnumerable<T> Include(params Expression<Func<T, object>>[] includes);
     }
 }

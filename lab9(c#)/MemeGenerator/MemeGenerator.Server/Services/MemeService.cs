@@ -8,6 +8,8 @@ using MemeGenerator.DataAccessLayer;
 using MemeGenerator.DataAccessLayer.Repositories;
 using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
+using MemeGenerator.Model;
+using System.Linq;
 
 namespace MemeGenerator.Client.Server.Services
 {
@@ -26,6 +28,7 @@ namespace MemeGenerator.Client.Server.Services
         public async void GenerateMemeRequest(PacketHeader header, Connection connection, MemeDto message)
         {
             var memeContent = GenerateMeme(message);
+            var memes = memeRepository.Include(x => x.User).Where(x => x.User.UserName == "user");
 
             Meme meme = new Meme()
             {
@@ -38,19 +41,24 @@ namespace MemeGenerator.Client.Server.Services
             {
                 memeRepository.Add(meme);
                 await memeRepository.SaveAsync();
-                Console.WriteLine("\nNew meme added to database:\n" +
-                    "Meme title: " + meme.MemeTitle +
-                    "\nCreated by id: " + meme.CreatedById);
-                connection.SendObject("MemeResponse", "Meme added.");
+                //Console.WriteLine("\nNew meme added to database:\n" +
+                //    "Meme title: " + meme.MemeTitle +
+                //    "\nCreated by id: " + meme.CreatedById);
+                connection.SendObject(PacketType.CreateMemeResponse, "Meme added.");
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nError :( \nmessage:  " + ex.Message);
-                connection.SendObject("MemeResponse", "Error ocured.");
+                connection.SendObject(PacketType.CreateMemeResponse, "Error ocured.");
             }
         }
 
+        public void GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, string incomingObject)
+        {
+            var memes = memeRepository.Include(x => x.User).Where(x => x.User.UserName == incomingObject);
+
+        }
         private Image GenerateMeme(MemeDto message)
         {
             string firstText = message.TopText;
@@ -85,9 +93,5 @@ namespace MemeGenerator.Client.Server.Services
             return ms.ToArray();
         }
 
-        public void GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, string incomingObject)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
