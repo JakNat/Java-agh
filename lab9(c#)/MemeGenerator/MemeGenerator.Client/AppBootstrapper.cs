@@ -23,15 +23,16 @@ namespace MemeGenerator.Client
 
             container.RegisterInstance(typeof(ClientApp), null, new ClientApp());
 
+            #region view models
+
             container.PerRequest<ShellViewModel>();
-
             container.PerRequest<LoginViewModel>();
-
             container.PerRequest<ConnectionViewModel>();
-
             container.PerRequest<RegisterViewModel>();
-
+            container.PerRequest<MemeLibraryViewModel>();
             container.PerRequest<MemeCreatorViewModel>();
+            #endregion
+
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

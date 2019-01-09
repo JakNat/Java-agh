@@ -13,7 +13,7 @@ namespace MemeGeneratorDataAccess.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201901061334409_InitialCreate"; }
+            get { return "201901091057082_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

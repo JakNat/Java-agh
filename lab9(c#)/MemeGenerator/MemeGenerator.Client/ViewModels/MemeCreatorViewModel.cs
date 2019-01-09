@@ -19,10 +19,21 @@ namespace MemeGenerator.Client.ViewModels
         private string _topText = "Top text";
         private string _bottomText = "Bottom text";
         private BitmapImage _image;
+        private string _title;
 
         public MemeCreatorViewModel(ClientApp client)
         {
             this.client = client;
+        }
+
+        public string Title
+        {
+            get { return _title; }
+            set
+            {
+                _title = value;
+                NotifyOfPropertyChange(() => Title);
+            }
         }
 
         public string TopText
@@ -34,29 +45,6 @@ namespace MemeGenerator.Client.ViewModels
                 NotifyOfPropertyChange(() => TopText);
             }
         }
-        public BitmapImage Image
-        {
-            get { return _image; }
-            set
-            {
-                _image = value;
-                NotifyOfPropertyChange(() => Image);
-                NotifyOfPropertyChange(() => CanCreateByServer);
-            }
-        }
-        private BitmapImage _previewImage;
-        
-
-        public BitmapImage PreviewImage
-        {
-            get { return _previewImage; }
-            set
-            {
-                _previewImage = value;
-                NotifyOfPropertyChange(() => PreviewImage);
-                NotifyOfPropertyChange(() => CanCreateByServer);
-            }
-        }
 
         public string BottomText
         {
@@ -65,6 +53,17 @@ namespace MemeGenerator.Client.ViewModels
             {
                 _bottomText = value;
                 NotifyOfPropertyChange(() => BottomText);
+            }
+        }
+
+        public BitmapImage Image
+        {
+            get { return _image; }
+            set
+            {
+                _image = value;
+                NotifyOfPropertyChange(() => Image);
+                NotifyOfPropertyChange(() => CanCreateByServer);
             }
         }
 
@@ -101,6 +100,17 @@ namespace MemeGenerator.Client.ViewModels
         {
             get { return Image != null && client.ServerConnection != null; }
         }
+        //private BitmapImage _previewImage;
+        //public BitmapImage PreviewImage
+        //{
+        //    get { return _previewImage; }
+        //    set
+        //    {
+        //        _previewImage = value;
+        //        NotifyOfPropertyChange(() => PreviewImage);
+        //        NotifyOfPropertyChange(() => CanCreateByServer);
+        //    }
+        //}
 
         //public void Preview()
         //{

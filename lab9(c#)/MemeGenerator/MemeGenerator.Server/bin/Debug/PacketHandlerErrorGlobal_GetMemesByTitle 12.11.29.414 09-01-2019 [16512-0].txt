@@ -1,0 +1,32 @@
+Base Exception Type: System.InvalidOperationException: Type is not expected, and no contract can be inferred: System.Data.Entity.DynamicProxies.Meme_994158C7F7C6CD6432C82CBD6B7EAC680DD66466A893E048A9592F4A75CEB61C
+   w ProtoBuf.Meta.TypeModel.ThrowUnexpectedType(Type type)
+   w ProtoBuf.Meta.TypeModel.TrySerializeAuxiliaryType(ProtoWriter writer, Type type, DataFormat format, Int32 tag, Object value, Boolean isInsideList, Object parentList)
+   w ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   w ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   w ProtoBuf.Serializer.NonGeneric.Serialize(Stream dest, Object instance)
+   w NetworkCommsDotNet.DPSBase.ProtobufSerializer.SerialiseDataObjectInt(Stream ouputStream, Object objectToSerialise, Dictionary`2 options) w C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\Dto\ProtobufSerializer.cs:wiersz 80
+   w NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseGeneralObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   w NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseDataObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   w NetworkCommsDotNet.Packet.Constructor[payloadObjectType](String sendingPacketTypeStr, String requestReturnPacketTypeStr, payloadObjectType payloadObject, SendReceiveOptions options, Boolean isNested)
+   w NetworkCommsDotNet.Packet..ctor(String sendingPacketTypeStr, Object payloadObject, SendReceiveOptions options)
+   w NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend, SendReceiveOptions options)
+   w NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend)
+   w MemeGenerator.Client.Server.Services.MemeService.GetMemesByTitle(PacketHeader packetHeader, Connection connection, String incomingObject) w C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\MemeService.cs:wiersz 66
+   w NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   w NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    w ProtoBuf.Meta.TypeModel.ThrowUnexpectedType(Type type)
+   w ProtoBuf.Meta.TypeModel.TrySerializeAuxiliaryType(ProtoWriter writer, Type type, DataFormat format, Int32 tag, Object value, Boolean isInsideList, Object parentList)
+   w ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value)
+   w ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context)
+   w ProtoBuf.Serializer.NonGeneric.Serialize(Stream dest, Object instance)
+   w NetworkCommsDotNet.DPSBase.ProtobufSerializer.SerialiseDataObjectInt(Stream ouputStream, Object objectToSerialise, Dictionary`2 options) w C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\Dto\ProtobufSerializer.cs:wiersz 80
+   w NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseGeneralObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   w NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseDataObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   w NetworkCommsDotNet.Packet.Constructor[payloadObjectType](String sendingPacketTypeStr, String requestReturnPacketTypeStr, payloadObjectType payloadObject, SendReceiveOptions options, Boolean isNested)
+   w NetworkCommsDotNet.Packet..ctor(String sendingPacketTypeStr, Object payloadObject, SendReceiveOptions options)
+   w NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend, SendReceiveOptions options)
+   w NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend)
+   w MemeGenerator.Client.Server.Services.MemeService.GetMemesByTitle(PacketHeader packetHeader, Connection connection, String incomingObject) w C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\MemeService.cs:wiersz 66
+   w NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   w NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)

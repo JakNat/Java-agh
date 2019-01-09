@@ -7,6 +7,7 @@ namespace MemeGenerator.Client.ViewModels
         private readonly MemeCreatorViewModel memeCreatorViewModel;
         private readonly LoginViewModel loginViewModel;
         private readonly RegisterViewModel registerViewModel;
+        private readonly MemeLibraryViewModel memeLibraryViewModel;
         private readonly ConnectionViewModel connectionViewModel;
         private readonly ClientApp client;
 
@@ -15,6 +16,7 @@ namespace MemeGenerator.Client.ViewModels
             MemeCreatorViewModel memeCreatorViewModel,
             LoginViewModel loginViewModel,
             RegisterViewModel registerViewModel,
+            MemeLibraryViewModel memeLibraryViewModel,
             ConnectionViewModel connectionViewModel,
             ClientApp client
             )
@@ -22,6 +24,7 @@ namespace MemeGenerator.Client.ViewModels
             this.memeCreatorViewModel = memeCreatorViewModel;
             this.loginViewModel = loginViewModel;
             this.registerViewModel = registerViewModel;
+            this.memeLibraryViewModel = memeLibraryViewModel;
             this.connectionViewModel = connectionViewModel;
             this.client = client;
         }
@@ -37,6 +40,10 @@ namespace MemeGenerator.Client.ViewModels
         public void LoadRegisterPage()
         {
             ActivateItem(registerViewModel);
+        }
+        public void LoadMemeLibraryPage()
+        {
+            ActivateItem(memeLibraryViewModel);
         }
 
         public void Connect()
