@@ -25,7 +25,7 @@ namespace MemeGenerator.Client.Server.Services
 
             // getting requested user
             User user = userRepository
-                .GetAllByCondition(x => x.UserName == incomingObject.Login)
+                .GetAllByCondition(x => x.Name == incomingObject.Login)
                 .FirstOrDefault();
 
             if(user != null)
@@ -56,7 +56,7 @@ namespace MemeGenerator.Client.Server.Services
 
             // getting requested user
             User user = userRepository
-                .GetAllByCondition(x => x.UserName == incomingObject.Login)
+                .GetAllByCondition(x => x.Name == incomingObject.Login)
                 .FirstOrDefault();
             if (user != null)
             {
@@ -68,7 +68,7 @@ namespace MemeGenerator.Client.Server.Services
             {
                 User newUser = new User()
                 {
-                    UserName = incomingObject.Login,
+                    Name = incomingObject.Login,
                     Password = incomingObject.Password,
                     CreatedDate = DateTime.Now,
 

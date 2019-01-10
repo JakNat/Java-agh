@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Linq;
 using Autofac;
-using MemeGenerator.Client.Server.Services;
-using MemeGenerator.DataAccessLayer;
+using NetworkCommsDotNet;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace MemeGenerator.Client.Server
 {
@@ -10,7 +11,17 @@ namespace MemeGenerator.Client.Server
     {
         static void Main(string[] args)
         {
-            
+
+
+            //LoggingConfiguration logConfig = new LoggingConfiguration();
+            //ConsoleTarget consoleTarget = new ConsoleTarget();
+            //consoleTarget.Layout = "${date:format=HH\\:mm\\:ss} [${threadid} - ${level}] - ${message}";
+            //logConfig.AddTarget("console", consoleTarget);
+            //logConfig.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, consoleTarget));
+            //var logger = NLog.LogManager.GetCurrentClassLogger();
+            //NetworkComms.EnableLogging();
+
+            NetworkComms.Logger.Info("ddd");
             //build our container
             var bootstrapper = new Bootstrapper();
             var container = bootstrapper.Bootstrap();

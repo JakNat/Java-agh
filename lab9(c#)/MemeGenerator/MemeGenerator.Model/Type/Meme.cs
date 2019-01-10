@@ -7,13 +7,12 @@ namespace MemeGenerator.Model.Type
     public class Meme
     {
         [Key]
-        public int Id { get; set; }
-        public string MemeTitle { get; set; }
+        public int MemeId { get; set; }
+        public string Title { get; set; }
         public byte[] Content { get; set; }
         public DateTime CreatedDate { get; set; }
 
-        [ForeignKey("User")]
         public int UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
     }
 }

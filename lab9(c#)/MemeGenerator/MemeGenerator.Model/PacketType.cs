@@ -17,6 +17,9 @@ namespace MemeGenerator.Model
 
         public static string GetMemesByUser = "GetMemesByUser";
         public static string GetMemesByUserResponse = GetMemesByUser + Return;
+
+        public static string GetMemesByTitle = "GetMemesByTitle";
+        public static string GetMemeByTitleResponse = GetMemesByTitle + Return;
         #endregion
 
         #region User service packets

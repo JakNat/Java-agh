@@ -8,5 +8,6 @@ namespace MemeGenerator.Client.Server.Services
     {
         void GenerateMemeRequest(PacketHeader header, Connection connection, MemeDto message);
         void GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, string incomingObject);
+        void GetMemesByTitle(PacketHeader packetHeader, Connection connection, string incomingObject);
     }
 }

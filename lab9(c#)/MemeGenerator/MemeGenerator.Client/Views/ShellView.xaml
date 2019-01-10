@@ -27,9 +27,10 @@
                     <MenuItem Name="LoadRegisterPage" Header="_Register" />
                     <MenuItem Name="Connect" Header="_Connect to server" />
                 </MenuItem>
-                
-                
-                <MenuItem Name="LoadMemeCreatorPage" Header="_MemeCreator" />
+                <MenuItem Name="LoadMemeCreatorPage" Header="_Meme creator" />
+                <MenuItem Name="LoadMemeLibraryPage" Header="_Meme library" />
+
+
             </Menu>
             <TextBox AcceptsReturn="True" />
         </DockPanel>     

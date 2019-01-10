@@ -41,3 +41,46 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Test
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.Core.xml
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.pdb
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.exe.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.abstractions.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.Tests.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.Tests.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Autofac.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.exe
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.Model.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGeneratorDataAccess.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGeneratorServer.exe
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.assert.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.core.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.execution.desktop.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\NetworkCommsDotNet.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\EntityFramework.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\protobuf-net.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.Core.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.exe.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGeneratorDataAccess.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGeneratorDataAccess.dll.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.Model.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGenerator.Model.dll.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGeneratorServer.pdb
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\MemeGeneratorServer.exe.config
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Autofac.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.assert.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.core.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.execution.desktop.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\EntityFramework.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\protobuf-net.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.Core.xml
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.csprojAssemblyReference.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.csproj.CoreCompileInputs.cache
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.csproj.CopyComplete
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.dll
+C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.pdb
