@@ -41,7 +41,7 @@ namespace MemeGenerator.Client.Views {
     public partial class MemeLibraryView : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 24 "..\..\..\Views\MemeLibraryView.xaml"
+        #line 26 "..\..\..\Views\MemeLibraryView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button LoadMemeByUser;
         
@@ -49,7 +49,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 25 "..\..\..\Views\MemeLibraryView.xaml"
+        #line 27 "..\..\..\Views\MemeLibraryView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button LoadMemeByTitle;
         

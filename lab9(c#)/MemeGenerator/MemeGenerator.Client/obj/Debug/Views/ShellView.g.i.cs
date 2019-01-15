@@ -41,7 +41,7 @@ namespace MemeGenerator.Client.Views {
     public partial class ShellView : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 26 "..\..\..\Views\ShellView.xaml"
+        #line 27 "..\..\..\Views\ShellView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem LoadLoginPage;
         
@@ -49,7 +49,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 27 "..\..\..\Views\ShellView.xaml"
+        #line 28 "..\..\..\Views\ShellView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem LoadRegisterPage;
         
@@ -57,7 +57,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 28 "..\..\..\Views\ShellView.xaml"
+        #line 29 "..\..\..\Views\ShellView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem Connect;
         
@@ -65,7 +65,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 30 "..\..\..\Views\ShellView.xaml"
+        #line 31 "..\..\..\Views\ShellView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem LoadMemeCreatorPage;
         
@@ -73,7 +73,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 31 "..\..\..\Views\ShellView.xaml"
+        #line 32 "..\..\..\Views\ShellView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem LoadMemeLibraryPage;
         
@@ -81,7 +81,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 39 "..\..\..\Views\ShellView.xaml"
+        #line 38 "..\..\..\Views\ShellView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ContentControl ActiveItem;
         

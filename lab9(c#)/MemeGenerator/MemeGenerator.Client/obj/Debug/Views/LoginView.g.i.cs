@@ -41,7 +41,7 @@ namespace MemeGenerator.Client.Views {
     public partial class LoginView : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 28 "..\..\..\Views\LoginView.xaml"
+        #line 27 "..\..\..\Views\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox UserName;
         

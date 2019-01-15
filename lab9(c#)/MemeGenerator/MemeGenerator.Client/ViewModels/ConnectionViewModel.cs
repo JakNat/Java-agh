@@ -1,10 +1,5 @@
 ﻿using Caliburn.Micro;
 using NetworkCommsDotNet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MemeGenerator.Client.ViewModels
 {
@@ -12,12 +7,14 @@ namespace MemeGenerator.Client.ViewModels
     {
         private readonly ClientApp client;
 
-        private string _ipAdress = "192.168.1.8";
-        private int _port = 12345;
         public ConnectionViewModel(ClientApp client)
         {
             this.client = client;
         }
+
+        private string _ipAdress = "192.168.1.8";
+        private int _port = 12345;
+
         public string IpAdress 
         {
             get { return _ipAdress; }
@@ -38,9 +35,15 @@ namespace MemeGenerator.Client.ViewModels
             }
         }
 
+        #region Buttons
+        /// <summary>
+        /// button -> Get server connection
+        /// </summary>
         public void Connect()
         {
+            //shut down old connection
             client.Shutdown();
+
             client.connectionInfo = new ConnectionInfo(IpAdress, Port);
             client.GetConnection();
             if(client.ServerConnection != null)
@@ -48,6 +51,6 @@ namespace MemeGenerator.Client.ViewModels
 
             }
         }
-
+        #endregion
     }
 }

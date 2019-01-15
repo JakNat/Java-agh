@@ -41,7 +41,7 @@ namespace MemeGenerator.Client.Views {
     public partial class MemeCreatorView : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 29 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 30 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Title;
         
@@ -49,7 +49,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 34 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 35 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox TopText;
         
@@ -57,7 +57,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 39 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 40 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox BottomText;
         
@@ -65,7 +65,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 44 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 45 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Image;
         
@@ -73,7 +73,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 48 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 49 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button UploadImage;
         
@@ -81,7 +81,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 49 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 50 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button ChooseFromLibrary;
         
@@ -89,7 +89,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 50 "..\..\..\Views\MemeCreatorView.xaml"
+        #line 51 "..\..\..\Views\MemeCreatorView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button CreateByServer;
         

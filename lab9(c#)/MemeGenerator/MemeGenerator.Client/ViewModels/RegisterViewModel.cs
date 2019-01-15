@@ -1,9 +1,7 @@
 ﻿using Caliburn.Micro;
+using MemeGenerator.Client.Requests;
 using MemeGenerator.Model.Dto;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -11,13 +9,18 @@ namespace MemeGenerator.Client.ViewModels
 {
     public class RegisterViewModel : Screen
     {
-        private string _userName = "xd";
-        private string _password = "lol";
+        private readonly ClientApp client;
+        private readonly IClientRequests clientRequests;
 
-        public RegisterViewModel(ClientApp client)
+        public RegisterViewModel(ClientApp client, IClientRequests clientRequests)
         {
             this.client = client;
+            this.clientRequests = clientRequests;
         }
+
+        private string _userName;
+        private string _password;
+        private string _confirmPassword;
 
         public string UserName
         {
@@ -41,9 +44,7 @@ namespace MemeGenerator.Client.ViewModels
                 NotifyOfPropertyChange(() => CanRegister);
             }
         }
-        private string _confirmPassword;
-        private readonly ClientApp client;
-
+       
         public string ConfirmPassword
         {
             get { return _confirmPassword; }
@@ -55,17 +56,10 @@ namespace MemeGenerator.Client.ViewModels
             }
         }
 
-        public bool CanRegister
-        {
-            get
-            {
-                return
-                client.ServerConnection != null
-                && !String.IsNullOrWhiteSpace(UserName)
-                && !String.IsNullOrWhiteSpace(Password);
-            }
-        }
-
+        #region Buttons
+        /// <summary>
+        /// Register button
+        /// </summary>
         public async void Register()
         {
             var registerDto = new RegisterDto()
@@ -76,7 +70,7 @@ namespace MemeGenerator.Client.ViewModels
             };
             try
             {
-                string response = await Task.Run(() => RegisterRequest(registerDto));
+                string response = await Task.Run(() => clientRequests.RegisterRequest(registerDto));
                 MessageBox.Show("Server reponse: " + response);
             }
             catch (Exception)
@@ -84,12 +78,23 @@ namespace MemeGenerator.Client.ViewModels
                 MessageBox.Show("server not response");
             }
         }
+        #endregion
 
-        private async Task<string> RegisterRequest(RegisterDto registerDto)
+        #region Validators
+        /// <summary>
+        /// Validator -> Register button
+        /// </summary>
+        public bool CanRegister
         {
-            return client.ServerConnection?
-              .SendReceiveObject<RegisterDto, string>
-              ("Register", "RegisterResponse", 10000, registerDto);
-        }
+            get
+            {
+                return
+                client.ServerConnection != null
+                && !String.IsNullOrWhiteSpace(UserName)
+                && !String.IsNullOrWhiteSpace(Password);
+            }
+        }      
+        #endregion
+       
     }
 }

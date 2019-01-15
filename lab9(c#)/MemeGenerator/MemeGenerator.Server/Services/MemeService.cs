@@ -11,16 +11,19 @@ using NetworkCommsDotNet.Connections;
 using MemeGenerator.Model;
 using System.Linq;
 using MemeGeneratorServer.Utils;
+using MemeGeneratorServer;
 
 namespace MemeGenerator.Client.Server.Services
 {
     public class MemeService : IMemeService
     {
         private readonly IGenericRepository<Meme> memeRepository;
+        private readonly DummyAuthentication dummyAuthentication;
 
-        public MemeService(IGenericRepository<Meme> memeRepository)
+        public MemeService(IGenericRepository<Meme> memeRepository, DummyAuthentication dummyAuthentication)
         {
             this.memeRepository = memeRepository;
+            this.dummyAuthentication = dummyAuthentication;
         }
 
         /// <summary>
@@ -28,13 +31,14 @@ namespace MemeGenerator.Client.Server.Services
         /// </summary>
         public async void GenerateMemeRequest(PacketHeader header, Connection connection, MemeDto message)
         {
-            
+            var key = message.Key;
+            var userId = dummyAuthentication.LoggedUsers[key];
             var memeContent = GenerateMeme(message);
             Meme meme = new Meme()
             {
                 Content = imageToByteArray(memeContent),
                 CreatedDate = DateTime.Now,
-                UserId = 1,
+                UserId = userId,
                 Title = message.ImageName
             };
 
@@ -57,6 +61,7 @@ namespace MemeGenerator.Client.Server.Services
 
         public void GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, string incomingObject)
         {
+            ConsoleMessage.ReqestReceived(packetHeader.PacketType);
             var memes = memeRepository.Include(x => x.User).Where(x => x.User.Name == incomingObject);
             connection.SendObject(PacketType.GetMemesByUserResponse, memes);
         }
@@ -71,6 +76,7 @@ namespace MemeGenerator.Client.Server.Services
 
         private Image GenerateMeme(MemeDto message)
         {
+
             string firstText = message.TopText;
             string secondText = message.BottomText;
             var image = message.Image;

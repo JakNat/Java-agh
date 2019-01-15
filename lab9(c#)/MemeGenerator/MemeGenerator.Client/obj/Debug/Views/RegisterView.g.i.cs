@@ -41,7 +41,7 @@ namespace MemeGenerator.Client.Views {
     public partial class RegisterView : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 27 "..\..\..\Views\RegisterView.xaml"
+        #line 26 "..\..\..\Views\RegisterView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox UserName;
         
@@ -57,7 +57,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 34 "..\..\..\Views\RegisterView.xaml"
+        #line 35 "..\..\..\Views\RegisterView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox ConfirmPassword;
         
@@ -65,7 +65,7 @@ namespace MemeGenerator.Client.Views {
         #line hidden
         
         
-        #line 36 "..\..\..\Views\RegisterView.xaml"
+        #line 38 "..\..\..\Views\RegisterView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Register;
         

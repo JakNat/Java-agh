@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using ProtoBuf;
@@ -6,7 +7,7 @@ using ProtoBuf;
 namespace MemeGenerator.Model.Dto
 {
     [ProtoContract]
-    public class MemeDto
+    public class MemeDto : IKeyDto
     {
         /// <summary>
         /// Private store of the image data as a byte[]
@@ -23,8 +24,13 @@ namespace MemeGenerator.Model.Dto
 
         [ProtoMember(4)]
         public string TopText { get; set; }
+
         [ProtoMember(5)]
         public string BottomText { get; set; }
+
+        [ProtoMember(6)]
+        public Guid Key { get; set; }
+
         /// <summary>
         /// The public accessor for the image. This will be populated
         /// automatically when the object is deserialised.

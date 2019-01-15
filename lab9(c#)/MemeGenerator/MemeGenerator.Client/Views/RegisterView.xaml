@@ -8,13 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
-       
             <ColumnDefinition Width="*"/>
-          
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -23,17 +21,20 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!--Row 1-->
         <TextBlock Margin="10" Grid.Column="1" Grid.Row="0" >User name</TextBlock>
         <TextBox MaxHeight="25" HorizontalAlignment="Left" Name="UserName" Grid.Column="2" Grid.Row="0" Width="200"/>
 
+        <!--Row 2-->
         <TextBlock Margin="10" Grid.Column="1" Grid.Row="1" >Password</TextBlock>
         <TextBox 
               MaxHeight="25" HorizontalAlignment="Left"  Name="Password" Grid.Column="2" Grid.Row="1" Width="200"/>
 
+        <!--Row 3--> 
         <TextBlock Margin="10" Grid.Column="1" Grid.Row="2" >Confirm Password</TextBlock>
         <TextBox MaxHeight="25" HorizontalAlignment="Left"  Name="ConfirmPassword" Grid.Column="2" Grid.Row="2" Width="200"/>
 
+        <!--Row 4-->
         <Button Margin="10" Name="Register" Grid.Column="1" Grid.Row="3">Register</Button>
-
     </Grid>
 </UserControl>

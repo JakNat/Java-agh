@@ -8,6 +8,9 @@ using MemeGenerator.Model;
 
 namespace MemeGenerator.Client.Server
 {
+    /// <summary>
+    /// Server class
+    /// </summary>
     public class ServerApp
     {
         private readonly IMemeService memeService;
@@ -32,6 +35,9 @@ namespace MemeGenerator.Client.Server
                 Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
         }
 
+        /// <summary>
+        /// Register all client requests
+        /// </summary>
         public void RegisterIncomingPackerHandlers()
         {
             //memeService requests
@@ -39,13 +45,10 @@ namespace MemeGenerator.Client.Server
             NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByUser, memeService.GetMemesByUSerRequest);
             NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByTitle, memeService.GetMemesByTitle);
 
-            
-
             //userService requests
             NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>(PacketType.Login, userService.LoginRequest);
             NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>(PacketType.Register, userService.RegisterRequest);
         }
-
 
         /// <summary>
         /// We have used NetworkComms so we should ensure that we correctly call shutdown

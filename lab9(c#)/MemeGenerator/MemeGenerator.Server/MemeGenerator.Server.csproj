@@ -72,6 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="DummyAuthentication.cs" />
+    <Compile Include="Services\Encrypter.cs" />
+    <Compile Include="Services\IEncrypter.cs" />
     <Compile Include="Services\IMemeService.cs" />
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\MemeService.cs" />

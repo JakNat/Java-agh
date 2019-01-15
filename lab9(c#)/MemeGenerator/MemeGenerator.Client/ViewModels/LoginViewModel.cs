@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using MemeGenerator.Client.Requests;
 using MemeGenerator.Model;
 using MemeGenerator.Model.Dto;
 using System;
@@ -14,12 +15,14 @@ namespace MemeGenerator.Client.ViewModels
     public class LoginViewModel : Screen
     {
         private readonly ClientApp client;
-
+        private readonly IClientRequests clientRequests;
         private string _userName;
         private string _password;
-        public LoginViewModel(ClientApp client)
+
+        public LoginViewModel(ClientApp client, IClientRequests clientRequests)
         {
             this.client = client;
+            this.clientRequests = clientRequests;
         }
 
         public string UserName
@@ -44,16 +47,11 @@ namespace MemeGenerator.Client.ViewModels
             }
         }
 
-        public bool CanLogin
-        {
-            get
-            {
-                return client?.ServerConnection != null
-                && !String.IsNullOrWhiteSpace(UserName)
-                && !String.IsNullOrWhiteSpace(Password);
-            }
-        }
+        #region Buttons
 
+        /// <summary>
+        /// button -> login to server
+        /// </summary>
         public async void Login()
         {
             var loginDto = new LoginDto()
@@ -64,8 +62,13 @@ namespace MemeGenerator.Client.ViewModels
 
             try
             {
-                string response = await Task.Run(() => LoginRequest(loginDto));
-                MessageBox.Show("Server reponse: " + response);
+                LoginResponseDto response = await Task.Run(() => clientRequests.LoginRequest(loginDto));
+                if(response.Key != null)
+                {
+                    client.Key = (Guid)response.Key;
+                }
+                MessageBox.Show("Server reponse: " + response.Message);
+                MessageBox.Show("your key:" + response.Key);
             }
             catch (Exception)
             {
@@ -73,11 +76,23 @@ namespace MemeGenerator.Client.ViewModels
             }
         }
 
-        private string LoginRequest(LoginDto loginDto)
+        #endregion
+
+        #region Validators
+
+        /// <summary>
+        /// validator -> Login button
+        /// </summary>
+        public bool CanLogin
         {
-            return client.ServerConnection?
-              .SendReceiveObject<LoginDto, string>
-              (PacketType.Login, PacketType.LoginResponse, 10000, loginDto);
+            get
+            {
+                return client?.ServerConnection != null
+                && !String.IsNullOrWhiteSpace(UserName)
+                && !String.IsNullOrWhiteSpace(Password);
+            }
         }
+
+        #endregion
     }
 }

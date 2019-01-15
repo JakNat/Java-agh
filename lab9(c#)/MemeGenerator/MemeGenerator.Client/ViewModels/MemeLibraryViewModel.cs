@@ -1,20 +1,23 @@
 ﻿using Caliburn.Micro;
-using MemeGenerator.Model;
+using MemeGenerator.Client.Requests;
 using MemeGenerator.Model.Dto;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MemeGenerator.Client.ViewModels
 {
     public class MemeLibraryViewModel : Screen
     {
         private readonly ClientApp client;
+        private readonly IClientRequests clientRequests;
 
+        public MemeLibraryViewModel(ClientApp client, IClientRequests clientRequests)
+        {
+            this.client = client;
+            this.clientRequests = clientRequests;
+        }
 
-        private string _searchByNameProperty = "meme";
+        private string _searchByNameProperty;
         private List<MemeDto> _memes;
 
         public List<MemeDto> Memes
@@ -34,26 +37,57 @@ namespace MemeGenerator.Client.ViewModels
             {
                 _searchByNameProperty = value;
                 NotifyOfPropertyChange(() => SearchByNameProperty);
+                NotifyOfPropertyChange(() => CanLoadMemeByTitle);
             }
         }
 
 
-        public MemeLibraryViewModel(ClientApp client)
-        {
-            this.client = client;
-        }
+        #region Buttons
+
+        /// <summary>
+        /// button -> Load memes by user id 
+        /// </summary>
         public void LoadMemeByUser()
         {
-            Memes = client.ServerConnection
-                .SendReceiveObject<string, List<MemeDto>>
-                (PacketType.GetMemesByUser, PacketType.GetMemesByUserResponse, 20000, "user");
+            Memes = clientRequests.LoadMemeByUser();
         }
 
+        /// <summary>
+        /// button -> Load memes by typed tittle
+        /// </summary>
         public void LoadMemeByTitle()
         {
-            Memes = client.ServerConnection.
-                SendReceiveObject<string, List<MemeDto>>
-                (PacketType.GetMemesByTitle, PacketType.GetMemeByTitleResponse, 20000, SearchByNameProperty);
+            Memes = clientRequests.LoadMemeByTitle(SearchByNameProperty);
         }
+
+        #endregion
+
+        #region Validators
+
+        /// <summary>
+        /// turn on or off button -> Load memes by user id
+        /// </summary>
+        public bool CanLoadMemeByUser
+        {
+            get
+            {
+                return client?.ServerConnection != null
+                && !String.IsNullOrWhiteSpace(SearchByNameProperty);
+            }
+        }
+
+        /// <summary>
+        /// turn on or off button -> Load memes by typed tittle
+        /// </summary>
+        public bool CanLoadMemeByTitle
+        {
+            get
+            {
+                return client?.ServerConnection != null
+                && !String.IsNullOrWhiteSpace(SearchByNameProperty);
+            }
+        }
+
+        #endregion
     }
 }

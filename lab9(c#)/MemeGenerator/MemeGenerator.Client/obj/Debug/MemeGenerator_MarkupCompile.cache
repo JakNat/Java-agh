@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\obj\Debug\
 MemeGenerator.Client
 none
 false
 DEBUG;TRACE
-C:\Users\jakub.natonek\Desktop\Nowy folder (3)\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\App.xaml
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Client\App.xaml
 61850958283
 
-19858053338
-80-1165753369
+221208613737
+80-523862204
 Views\ConnectionView.xaml;Views\LoginView.xaml;Views\MemeCreatorView.xaml;Views\MemeLibraryView.xaml;Views\ShellView.xaml;Views\RegisterView.xaml;
 
-False
+True
 

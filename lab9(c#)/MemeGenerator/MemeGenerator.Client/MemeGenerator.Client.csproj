@@ -92,8 +92,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Utils\ImageHelper.cs" />
+    <Compile Include="ClientApp.cs" />
+    <Compile Include="Requests\ClientRequests.cs" />
+    <Compile Include="Requests\IClientRequests.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MemeCreatorViewModel.cs" />
@@ -177,6 +178,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

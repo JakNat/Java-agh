@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using MemeGenerator.Client.Requests;
 using MemeGenerator.Client.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace MemeGenerator.Client
             container.Singleton<IWindowManager, WindowManager>();
 
             container.RegisterInstance(typeof(ClientApp), null, new ClientApp());
+            container.PerRequest<IClientRequests,ClientRequests>();
 
             #region view models
-
             container.PerRequest<ShellViewModel>();
             container.PerRequest<LoginViewModel>();
             container.PerRequest<ConnectionViewModel>();

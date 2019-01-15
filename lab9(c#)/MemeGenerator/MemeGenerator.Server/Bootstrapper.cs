@@ -4,6 +4,7 @@ using MemeGenerator.DataAccessLayer;
 using MemeGenerator.DataAccessLayer.Repositories;
 using MemeGenerator.Client.Server.Services;
 using System.Data.Entity;
+using MemeGeneratorServer;
 
 namespace MemeGenerator.Client.Server
 {
@@ -16,6 +17,8 @@ namespace MemeGenerator.Client.Server
             // database
             builder.RegisterInstance<DbContext>(new MemeGeneratorDBContext());
 
+            builder.RegisterInstance<DummyAuthentication>(new DummyAuthentication());
+
             // repositories
             builder.RegisterType<GenericRepository<Meme>>().As<IGenericRepository<Meme>>();
             builder.RegisterType<GenericRepository<User>>().As<IGenericRepository<User>>();
@@ -23,6 +26,8 @@ namespace MemeGenerator.Client.Server
             // services
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<MemeService>().As<IMemeService>();
+
+            builder.RegisterType<Encrypter>().As<IEncrypter>().SingleInstance();
 
             // server
             builder.RegisterType<ServerApp>().AsSelf();

@@ -8,18 +8,19 @@
         Title="Meme Generator"  Height="450" Width="800"
         FontSize="16"  >
     <Grid >
-        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+        
         <DockPanel Grid.Column="0" Grid.ColumnSpan="6" >
             <Menu DockPanel.Dock="Top">
                 <MenuItem  Header="_Authentication  ">
@@ -29,8 +30,6 @@
                 </MenuItem>
                 <MenuItem Name="LoadMemeCreatorPage" Header="_Meme creator" />
                 <MenuItem Name="LoadMemeLibraryPage" Header="_Meme library" />
-
-
             </Menu>
             <TextBox AcceptsReturn="True" />
         </DockPanel>     

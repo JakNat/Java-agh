@@ -7,47 +7,65 @@ using NetworkCommsDotNet.Connections;
 using System;
 using System.Linq;
 using MemeGenerator.Model;
+using MemeGeneratorServer;
 
 namespace MemeGenerator.Client.Server.Services
 {
     public class UserService : IUserService
     {
         private readonly IGenericRepository<User> userRepository;
+        private readonly IEncrypter _encrypter;
+        private readonly DummyAuthentication dummyAuthentication;
 
-        public UserService(IGenericRepository<User> userRepository)
+        public UserService(IGenericRepository<User> userRepository, IEncrypter encrypter, DummyAuthentication dummyAuthentication)
         {
             this.userRepository = userRepository;
+            _encrypter = encrypter;
+            this.dummyAuthentication = dummyAuthentication;
         }
 
         public void LoginRequest(PacketHeader packetHeader, Connection connection, LoginDto incomingObject)
         {
             Console.WriteLine("\nLogin request received..");
+            //response
+            var loginResponseDto = new LoginResponseDto();
 
             // getting requested user
             User user = userRepository
                 .GetAllByCondition(x => x.Name == incomingObject.Login)
                 .FirstOrDefault();
 
-            if(user != null)
+            if (user == null)
             {
-                if(String.Equals(user.Password, incomingObject.Password))
-                {
-                    Console.WriteLine("Login request successful:");
-                    Console.WriteLine("User: '{0}' logged to a server.",incomingObject.Login);
+                UserNotFoundMethod(connection, loginResponseDto);
+            }
 
-                    connection.SendObject(PacketType.LoginResponse, "You are logged.");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid login request: wrong password.");
-                    connection.SendObject(PacketType.LoginResponse, "Wrong password.");
-                }
-            }
-            else
+            if (!String.Equals(user.Password, incomingObject.Password))
             {
-                Console.WriteLine("Invalidd login request: user doesn't exist.");
-                connection.SendObject(PacketType.LoginResponse, "User douesn't exist.");
+                WrongPasswordMethod(connection, loginResponseDto);
             }
+
+            Console.WriteLine("Login request successful:");
+            Console.WriteLine("User: '{0}' logged to a server.", incomingObject.Login);
+
+            loginResponseDto.Key = dummyAuthentication.AddUser(user.UserId);
+            loginResponseDto.Message = "Logging successful.";
+      
+            connection.SendObject(PacketType.LoginResponse, loginResponseDto);
+        }
+
+        private void WrongPasswordMethod(Connection connection, LoginResponseDto loginResponseDto)
+        {
+            loginResponseDto.Message = "Logging failed.";
+            Console.WriteLine("Invalid login request: wrong password.");
+            connection.SendObject(PacketType.LoginResponse, loginResponseDto);
+        }
+
+        private void UserNotFoundMethod(Connection connection, LoginResponseDto loginResponseDto)
+        {
+            loginResponseDto.Message = "Logging failed.";
+            Console.WriteLine("Invalidd login request: user doesn't exist.");
+            connection.SendObject(PacketType.LoginResponse, loginResponseDto);
         }
 
         public async void RegisterRequest(PacketHeader packetHeader, Connection connection, RegisterDto incomingObject)
@@ -63,6 +81,9 @@ namespace MemeGenerator.Client.Server.Services
                 connection.SendObject(PacketType.RegisterResponse, "User already exists.");
                 return;
             }
+
+            //var salt = _encrypter.GetSalt(incomingObject.Password);
+            //var hash = new User
 
             if (incomingObject.Password == incomingObject.ConfrimPassword)
             {
