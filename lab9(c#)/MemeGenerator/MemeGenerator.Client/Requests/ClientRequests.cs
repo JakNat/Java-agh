@@ -14,50 +14,52 @@ namespace MemeGenerator.Client.Requests
     /// </summary>
     public class ClientRequests : IClientRequests
     {
-        private readonly ClientApp client;
+        private readonly IClientApp client;
 
-        public ClientRequests(ClientApp client)
+        public ClientRequests(IClientApp client)
         {
             this.client = client;
-            serverConnection = client.ServerConnection;
         }
 
-        private TCPConnection serverConnection;
+
+        private TCPConnection serverConnection
+        {
+            get { return client.ServerConnection; }
+        }
 
         public LoginResponseDto LoginRequest(LoginDto loginDto)
         {
             return serverConnection?
               .SendReceiveObject<LoginDto, LoginResponseDto>
-              (PacketType.Login, PacketType.LoginResponse, 10000, loginDto);
+              (PacketTypes.Login.Request, PacketTypes.Login.Response, 10000, loginDto);
         }
     
         public string CreateRequest(MemeDto memeDto)
         {
             return serverConnection?
               .SendReceiveObject<MemeDto, string>
-              (PacketType.CreateMeme, PacketType.CreateMemeResponse, 20000, memeDto);
+              (PacketTypes.CreateMeme.Request, PacketTypes.CreateMeme.Response, 20000, memeDto);
         }
        
         public List<MemeDto> LoadMemeByUser()
         {
             return serverConnection?
                 .SendReceiveObject<string, List<MemeDto>>
-                (PacketType.GetMemesByUser, PacketType.GetMemesByUserResponse, 20000, "user");
+                (PacketTypes.GetMemesByUser.Request, PacketTypes.GetMemesByUser.Response, 20000, "user");
         }
        
         public List<MemeDto> LoadMemeByTitle(string title)
         {
             return serverConnection?.
                 SendReceiveObject<string, List<MemeDto>>
-                (PacketType.GetMemesByTitle, PacketType.GetMemeByTitleResponse, 20000, title);
+                (PacketTypes.GetMemesByTitle.Request, PacketTypes.GetMemesByTitle.Response, 20000, title);
         }
 
         public string RegisterRequest(RegisterDto registerDto)
         {
             return serverConnection?
              .SendReceiveObject<RegisterDto, string>
-             (PacketType.Register, PacketType.RegisterResponse, 10000, registerDto);
+             (PacketTypes.Register.Request, PacketTypes.Register.Response, 10000, registerDto);
         }
-     
     }
 }

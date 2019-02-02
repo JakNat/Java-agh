@@ -8,10 +8,10 @@ namespace MemeGenerator.Client.ViewModels
 {
     public class MemeLibraryViewModel : Screen
     {
-        private readonly ClientApp client;
+        private readonly IClientApp client;
         private readonly IClientRequests clientRequests;
 
-        public MemeLibraryViewModel(ClientApp client, IClientRequests clientRequests)
+        public MemeLibraryViewModel(IClientApp client, IClientRequests clientRequests)
         {
             this.client = client;
             this.clientRequests = clientRequests;
@@ -71,8 +71,7 @@ namespace MemeGenerator.Client.ViewModels
         {
             get
             {
-                return client?.ServerConnection != null
-                && !String.IsNullOrWhiteSpace(SearchByNameProperty);
+                return client?.ServerConnection != null;
             }
         }
 

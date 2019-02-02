@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MemeGeneratorServer.Utils
+namespace MemeGenerator.Server.Utils
 {
     public static class ConsoleMessage
     {

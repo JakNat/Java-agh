@@ -14,16 +14,17 @@ namespace MemeGenerator.Client.ViewModels
 {
     public class LoginViewModel : Screen
     {
-        private readonly ClientApp client;
+        private readonly IClientApp client;
         private readonly IClientRequests clientRequests;
-        private string _userName;
-        private string _password;
 
-        public LoginViewModel(ClientApp client, IClientRequests clientRequests)
+        public LoginViewModel(IClientApp client, IClientRequests clientRequests)
         {
             this.client = client;
             this.clientRequests = clientRequests;
         }
+
+        private string _userName;
+        private string _password;
 
         public string UserName
         {
@@ -75,7 +76,6 @@ namespace MemeGenerator.Client.ViewModels
                 MessageBox.Show("server not response");
             }
         }
-
         #endregion
 
         #region Validators

@@ -6,6 +6,9 @@ using ProtoBuf;
 
 namespace MemeGenerator.Model.Dto
 {
+    /// <summary>
+    /// Modified sample class from NetworkComms documentation (sending images)
+    /// </summary>
     [ProtoContract]
     public class MemeDto : IKeyDto
     {
@@ -36,6 +39,7 @@ namespace MemeGenerator.Model.Dto
         /// automatically when the object is deserialised.
         /// </summary>
         public Image Image { get; set; }
+
 
         /// <summary>
         /// Private parameterless constructor required for deserialisation

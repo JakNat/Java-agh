@@ -5,9 +5,9 @@ namespace MemeGenerator.Client.ViewModels
 {
     public class ConnectionViewModel : Screen
     {
-        private readonly ClientApp client;
+        private readonly IClientApp client;
 
-        public ConnectionViewModel(ClientApp client)
+        public ConnectionViewModel(IClientApp client)
         {
             this.client = client;
         }

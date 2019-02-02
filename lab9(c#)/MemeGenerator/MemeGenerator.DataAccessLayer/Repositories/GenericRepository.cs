@@ -38,8 +38,7 @@ namespace MemeGenerator.DataAccessLayer.Repositories
         {
             return Context.Set<TEntity>().Where(predicate);
         }
-
-       
+            
         
 
         public bool HasChanges()

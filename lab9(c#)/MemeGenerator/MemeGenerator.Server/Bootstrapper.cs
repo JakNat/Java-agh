@@ -8,6 +8,10 @@ using MemeGeneratorServer;
 
 namespace MemeGenerator.Client.Server
 {
+    /// <summary>
+    /// MemeGeneratpr server contener
+    /// framework: autofac
+    /// </summary>
     public class Bootstrapper
     {
         public IContainer Bootstrap()
@@ -30,7 +34,7 @@ namespace MemeGenerator.Client.Server
             builder.RegisterType<Encrypter>().As<IEncrypter>().SingleInstance();
 
             // server
-            builder.RegisterType<ServerApp>().AsSelf();
+            builder.RegisterType<ServerApp>().AsSelf().SingleInstance();
 
             return builder.Build();
         }

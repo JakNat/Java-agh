@@ -7,6 +7,10 @@ using System.Windows;
 
 namespace MemeGenerator.Client
 {
+    /// <summary>
+    /// MemeGenerator app contener
+    /// framework: Caliburn.Micro simpleContainer
+    /// </summary>
     public class AppBootstrapper : BootstrapperBase
     {
         private SimpleContainer container;
@@ -22,10 +26,10 @@ namespace MemeGenerator.Client
 
             container.Singleton<IWindowManager, WindowManager>();
 
-            container.RegisterInstance(typeof(ClientApp), null, new ClientApp());
-            container.PerRequest<IClientRequests,ClientRequests>();
+            container.RegisterInstance(typeof(IClientApp), null, new ClientApp());
 
-            #region view models
+            container.PerRequest<IClientRequests, ClientRequests>();
+           #region view models
             container.PerRequest<ShellViewModel>();
             container.PerRequest<LoginViewModel>();
             container.PerRequest<ConnectionViewModel>();

@@ -77,6 +77,7 @@
     <Compile Include="Services\IEncrypter.cs" />
     <Compile Include="Services\IMemeService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Utils\MemeBuilder.cs" />
     <Compile Include="Services\MemeService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

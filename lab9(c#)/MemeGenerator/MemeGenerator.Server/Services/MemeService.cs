@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using MemeGenerator.Model.Type;
 using MemeGenerator.Model.Dto;
 using MemeGenerator.DataAccessLayer;
@@ -10,8 +7,11 @@ using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
 using MemeGenerator.Model;
 using System.Linq;
-using MemeGeneratorServer.Utils;
 using MemeGeneratorServer;
+using MemeGenerator.Server.Utils;
+using System.IO;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace MemeGenerator.Client.Server.Services
 {
@@ -33,7 +33,7 @@ namespace MemeGenerator.Client.Server.Services
         {
             var key = message.Key;
             var userId = dummyAuthentication.LoggedUsers[key];
-            var memeContent = GenerateMeme(message);
+            var memeContent = MemeBuilder.GenerateMeme(message);
             Meme meme = new Meme()
             {
                 Content = imageToByteArray(memeContent),
@@ -46,16 +46,13 @@ namespace MemeGenerator.Client.Server.Services
             {
                 memeRepository.Add(meme);
                 await memeRepository.SaveAsync();
-                //Console.WriteLine("\nNew meme added to database:\n" +
-                //    "Meme title: " + meme.MemeTitle +
-                //    "\nCreated by id: " + meme.CreatedById);
-                connection.SendObject(PacketType.CreateMemeResponse, "Meme added.");
+                connection.SendObject(PacketTypes.CreateMeme.Response, "Meme added.");
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nError :( \nmessage:  " + ex.Message);
-                connection.SendObject(PacketType.CreateMemeResponse, "Error ocured.");
+                connection.SendObject(PacketTypes.CreateMeme.Response, "Error ocured.");
             }
         }
 
@@ -63,7 +60,7 @@ namespace MemeGenerator.Client.Server.Services
         {
             ConsoleMessage.ReqestReceived(packetHeader.PacketType);
             var memes = memeRepository.Include(x => x.User).Where(x => x.User.Name == incomingObject);
-            connection.SendObject(PacketType.GetMemesByUserResponse, memes);
+            connection.SendObject(PacketTypes.GetMemesByUser.Response, memes);
         }
 
         public void GetMemesByTitle(PacketHeader packetHeader, Connection connection, string incomingObject)
@@ -71,41 +68,11 @@ namespace MemeGenerator.Client.Server.Services
             ConsoleMessage.ReqestReceived(packetHeader.PacketType);
 
             var memes = memeRepository.GetAllByCondition(x => x.Title == incomingObject);
-            connection.SendObject(PacketType.GetMemeByTitleResponse, memes);
+            connection.SendObject(PacketTypes.GetMemesByTitle.Response, memes);
         }
 
-        private Image GenerateMeme(MemeDto message)
-        {
 
-            string firstText = message.TopText;
-            string secondText = message.BottomText;
-            var image = message.Image;
-
-            RectangleF TopSize = new RectangleF(new Point(0, 0), new SizeF(image.Width, image.Height / 8));
-            int y = (int)(image.Height * (7.0 / 8.0));
-            RectangleF BottomSize = new RectangleF(new Point(0, y), new SizeF(image.Width, image.Height / 8));
-
-            StringFormat format = new StringFormat() { LineAlignment = StringAlignment.Center, Alignment = StringAlignment.Center };
-
-            PutText(firstText, secondText, image, TopSize, BottomSize, format);
-            // var path = AppDomain.CurrentDomain.BaseDirectory + "test.jpg";
-            //message.Image.Save(path);
-            return image;
-        }
-
-        private void PutText(string firstText, string secondText, Image image, RectangleF TopSize, RectangleF BottomSize, StringFormat format)
-        {
-            using (Graphics graphics = Graphics.FromImage(image))
-            {
-                using (Font arialFont = new Font("Impact", image.Height / (14 / 1), FontStyle.Bold, GraphicsUnit.Point))
-                {
-                    graphics.DrawString(firstText, arialFont, Brushes.White, TopSize, format);
-                    graphics.DrawString(secondText, arialFont, Brushes.White, BottomSize, format);
-                }
-            }
-        }
-
-        public byte[] imageToByteArray(Image imageIn)
+        public static byte[] imageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, ImageFormat.Gif);

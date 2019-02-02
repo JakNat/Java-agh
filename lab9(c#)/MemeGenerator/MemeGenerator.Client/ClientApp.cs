@@ -16,9 +16,9 @@ namespace MemeGenerator.Client
     /// <summary>
     /// Client class
     /// </summary>
-    public class ClientApp
+    public class ClientApp : IClientApp
     {
-        private readonly ClientRequests clientRequests;
+        //private readonly ClientRequests clientRequests;
 
         public ConnectionInfo connectionInfo { get; set; }
         public SendReceiveOptions customSendReceiveOptions { get; set; }

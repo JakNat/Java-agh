@@ -1,6 +1,5 @@
 ﻿using Caliburn.Micro;
 using MemeGenerator.Model.Dto;
-using MemeGenerator.Client.Utils;
 using Microsoft.Win32;
 using System;
 using System.Drawing;
@@ -10,12 +9,13 @@ using System.Windows.Media.Imaging;
 using MemeGenerator.Client;
 using MemeGenerator.Model;
 using MemeGenerator.Client.Requests;
+using MemeGenerator.Client.Utils;
 
 namespace MemeGenerator.Client.ViewModels
 {
     public class MemeCreatorViewModel : Screen
     {
-        private readonly ClientApp client;
+        private readonly IClientApp client;
         private readonly IClientRequests clientRequests;
 
         private string _topText = "Top text";
@@ -23,7 +23,7 @@ namespace MemeGenerator.Client.ViewModels
         private BitmapImage _image;
         private string _title;
 
-        public MemeCreatorViewModel(ClientApp client ,IClientRequests clientRequests)
+        public MemeCreatorViewModel(IClientApp client ,IClientRequests clientRequests)
         {
             this.client = client;
             this.clientRequests = clientRequests;

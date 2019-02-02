@@ -9,10 +9,10 @@ namespace MemeGenerator.Client.ViewModels
 {
     public class RegisterViewModel : Screen
     {
-        private readonly ClientApp client;
+        private readonly IClientApp client;
         private readonly IClientRequests clientRequests;
 
-        public RegisterViewModel(ClientApp client, IClientRequests clientRequests)
+        public RegisterViewModel(IClientApp client, IClientRequests clientRequests)
         {
             this.client = client;
             this.clientRequests = clientRequests;

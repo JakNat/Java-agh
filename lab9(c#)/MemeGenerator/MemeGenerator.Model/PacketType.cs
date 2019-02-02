@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace MemeGenerator.Model
 {
-    public static class PacketType
+    public static class PacketTypes
     {
-        private static string Return = "Return";
-
         #region Meme service packets
-
-        public static string CreateMeme = "CreateMeme";
-        public static string CreateMemeResponse = CreateMeme + Return;
-
-        public static string GetMemesByUser = "GetMemesByUser";
-        public static string GetMemesByUserResponse = GetMemesByUser + Return;
-
-        public static string GetMemesByTitle = "GetMemesByTitle";
-        public static string GetMemeByTitleResponse = GetMemesByTitle + Return;
+        public static PacketType CreateMeme = new PacketType("CreateMeme");
+        public static PacketType GetMemesByUser = new PacketType("GetMemesByUser");
+        public static PacketType GetMemesByTitle = new PacketType("GetMemesByTitle");
         #endregion
 
         #region User service packets
-
-        public static string Login = "Login";
-        public static string LoginResponse = Login + Return;
-
-        public static string Register = "Register";
-        public static string RegisterResponse = Register + Return;
+        public static PacketType Login = new PacketType("Login");
+        public static PacketType Register = new PacketType("Register");
         #endregion
     }
+
+    public class PacketType
+    {
+        public PacketType(string packetType)
+        {
+            Request = packetType;
+            Response = Request + "Response";
+        }
+        public string Request { get; }
+        public string Response { get; }
+    }
+
 }

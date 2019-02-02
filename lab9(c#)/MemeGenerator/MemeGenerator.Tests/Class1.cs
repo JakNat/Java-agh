@@ -13,6 +13,9 @@ namespace MemeGenerator.Client.Tests
         {
             var builder = new ContainerBuilder();
 
+           
+            
+
             // MemeGenerator database
           //  var db = new MemeGeneratorDBContext();
 
@@ -26,6 +29,7 @@ namespace MemeGenerator.Client.Tests
             builder.RegisterType<ServerApp>().AsSelf();
 
             container = builder.Build();
+
         }
     }
 }

@@ -10,6 +10,7 @@ namespace MemeGenerator.Client.Server
 {
     /// <summary>
     /// Server class
+    /// framework: NetworkComms 
     /// </summary>
     public class ServerApp
     {
@@ -41,13 +42,13 @@ namespace MemeGenerator.Client.Server
         public void RegisterIncomingPackerHandlers()
         {
             //memeService requests
-            NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>(PacketType.CreateMeme, memeService.GenerateMemeRequest);
-            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByUser, memeService.GetMemesByUSerRequest);
-            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketType.GetMemesByTitle, memeService.GetMemesByTitle);
+            NetworkComms.AppendGlobalIncomingPacketHandler<MemeDto>(PacketTypes.CreateMeme.Request, memeService.GenerateMemeRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketTypes.GetMemesByUser.Request, memeService.GetMemesByUSerRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<string>(PacketTypes.GetMemesByTitle.Request, memeService.GetMemesByTitle);
 
             //userService requests
-            NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>(PacketType.Login, userService.LoginRequest);
-            NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>(PacketType.Register, userService.RegisterRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<LoginDto>(PacketTypes.Login.Request, userService.LoginRequest);
+            NetworkComms.AppendGlobalIncomingPacketHandler<RegisterDto>(PacketTypes.Register.Request, userService.RegisterRequest);
         }
 
         /// <summary>

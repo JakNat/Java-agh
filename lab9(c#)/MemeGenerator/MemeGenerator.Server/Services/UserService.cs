@@ -51,21 +51,21 @@ namespace MemeGenerator.Client.Server.Services
             loginResponseDto.Key = dummyAuthentication.AddUser(user.UserId);
             loginResponseDto.Message = "Logging successful.";
       
-            connection.SendObject(PacketType.LoginResponse, loginResponseDto);
+            connection.SendObject(PacketTypes.Login.Response, loginResponseDto);
         }
 
         private void WrongPasswordMethod(Connection connection, LoginResponseDto loginResponseDto)
         {
             loginResponseDto.Message = "Logging failed.";
             Console.WriteLine("Invalid login request: wrong password.");
-            connection.SendObject(PacketType.LoginResponse, loginResponseDto);
+            connection.SendObject(PacketTypes.Login.Response, loginResponseDto);
         }
 
         private void UserNotFoundMethod(Connection connection, LoginResponseDto loginResponseDto)
         {
             loginResponseDto.Message = "Logging failed.";
             Console.WriteLine("Invalidd login request: user doesn't exist.");
-            connection.SendObject(PacketType.LoginResponse, loginResponseDto);
+            connection.SendObject(PacketTypes.Login.Response, loginResponseDto);
         }
 
         public async void RegisterRequest(PacketHeader packetHeader, Connection connection, RegisterDto incomingObject)
@@ -78,7 +78,7 @@ namespace MemeGenerator.Client.Server.Services
                 .FirstOrDefault();
             if (user != null)
             {
-                connection.SendObject(PacketType.RegisterResponse, "User already exists.");
+                connection.SendObject(PacketTypes.Register.Response, "User already exists.");
                 return;
             }
 
@@ -99,12 +99,12 @@ namespace MemeGenerator.Client.Server.Services
                
                 await userRepository.SaveAsync();
                 Console.WriteLine("New user added: '{0}'",incomingObject.Login);
-                connection.SendObject(PacketType.RegisterResponse, "You are registered.");
+                connection.SendObject(PacketTypes.Register.Response, "You are registered.");
             }
             else
             {
                 Console.WriteLine("Not same passwords");
-                connection.SendObject(PacketType.RegisterResponse, "Error.");
+                connection.SendObject(PacketTypes.Register.Response, "Error.");
             }
         }
     }

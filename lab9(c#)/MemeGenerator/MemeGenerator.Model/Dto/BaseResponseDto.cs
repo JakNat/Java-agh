@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace MemeGenerator.Model.Dto
 {
     [ProtoContract]
+    //ProtoInclude -> for classes which inherits from BaseResponseDto
     [ProtoInclude(500, typeof(LoginResponseDto))]
     public class BaseResponseDto
     {

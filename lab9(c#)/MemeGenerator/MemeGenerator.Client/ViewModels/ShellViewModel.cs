@@ -42,7 +42,7 @@ namespace MemeGenerator.Client.ViewModels
         /// </summary>
         public void LoadLoginPage()
         {
-            ActivateItem(loginViewModel);
+            ActivateItem(IoC.Get<LoginViewModel>());
         }
 
         /// <summary>

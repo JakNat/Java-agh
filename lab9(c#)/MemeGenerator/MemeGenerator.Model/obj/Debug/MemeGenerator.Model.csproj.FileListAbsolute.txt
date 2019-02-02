@@ -147,6 +147,7 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Mode
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\tr\StreamJsonRpc.resources.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\zh-Hans\StreamJsonRpc.resources.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\bin\Debug\zh-Hant\StreamJsonRpc.resources.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csprojAssemblyReference.cache
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CoreCompileInputs.cache
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.csproj.CopyComplete
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\obj\Debug\MemeGenerator.Model.dll
