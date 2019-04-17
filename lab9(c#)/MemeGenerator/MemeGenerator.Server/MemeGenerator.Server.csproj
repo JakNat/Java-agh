@@ -72,8 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Domain\Message\Request.cs" />
+    <Compile Include="Domain\Node.cs" />
+    <Compile Include="Domain\NodeListener.cs" />
     <Compile Include="DummyAuthentication.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="NodeRepository.cs" />
+    <Compile Include="Services\BroadcastService.cs" />
     <Compile Include="Services\Encrypter.cs" />
     <Compile Include="Services\IEncrypter.cs" />
     <Compile Include="Services\IMemeService.cs" />
@@ -100,5 +105,6 @@
       <Name>MemeGenerator.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

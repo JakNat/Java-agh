@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Autofac;
+using MemeGenerator.Model.Dto.Requests;
 using MemeGeneratorServer;
+using MemeGeneratorServer.Domain;
 using NetworkCommsDotNet;
 using NetworkCommsDotNet.Connections;
 using NetworkCommsDotNet.Tools;
@@ -20,68 +23,54 @@ namespace MemeGenerator.Client.Server
         }
         static void Main(string[] args)
         {
-            //Start listening for incoming connections
-            //  Connection.StartListening(ConnectionType.UDP, new System.Net.IPEndPoint(System.Net.IPAddress.Any, 12345));
-
-            //Print out the IPs and ports we are now listening on
-            //Console.WriteLine("Server listening for TCP connection on:");
-            //foreach (System.Net.IPEndPoint localEndPoint in Connection.ExistingLocalListenEndPoints(ConnectionType.UDP))
-            //{
-            //  Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
-            //}
-
-            //Node node1 = new Node("192.168.103.31", 10000);
-            //Node node2 = new Node("192.168.103.35",10001);
-
-            Node node1 = new Node("node 1", Port);
-            var xad = HostInfo.AllLocalAdaptorNames();
-            Node node2 = new Node("node 2", Port);
-            
-            Node node3 = new Node("node 3", Port);  
-            Node node4 = new Node("node 4", Port);
-            //foreach (System.Net.IPEndPoint localEndPoint in Connection.ExistingLocalListenEndPoints(ConnectionType.UDP))
-            //{
-            //    Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
-            //}
-            while (true)
+            List<BaseNode> nodes = new List<BaseNode>()
             {
+                new BaseNode(1),
+                new BaseNode(2),
+                new BaseNode(3),
+                new BaseNode(4),
+                new BaseNode(5),
+                new BaseNode(6),
+            };
 
-                Console.WriteLine("\nPress any key to close server.");
-               var x = Console.ReadLine();
-                if (x != "")
-                {
-                    node1.SendBroadCast(Int32.Parse(x));
-                }
+            foreach (var node in nodes)
+            {
+                NodeRepository.AddNode(node);
             }
 
-            var bootstrapper = new Bootstrapper();
-            var container = bootstrapper.Bootstrap();
-            
-            //taking our server from container
-            var server = container.Resolve<ServerApp>();
-
-            //register all requests
-            server.RegisterIncomingPackerHandlers();
-
-
-            server.StartListeningUDP(11111);
-            double a = 0;
-            while (true)
+            List<NodeListener<BaseNode>> listeners = new List<NodeListener<BaseNode>>();
+            foreach (var node in nodes)
             {
-                a += 0.00001;
-                //a = 0;
-                if (a == 1000) 
-                {
-                    server.SendBroadCast(11111);
-                }
+                var listener = new NodeListener<BaseNode>(node);
+                listener.StartListening();
+                listeners.Add(listener);
             }
-            
+
+            //subskrybowanie
+            nodes[0].SubsribedNodes = new List<int>() { 2, 4 };
+            nodes[1].SubsribedNodes = new List<int>() { 1, 3 };
+            nodes[2].SubsribedNodes = new List<int>() { 2, };
+            nodes[3].SubsribedNodes = new List<int>() { 1 };
+            nodes[4].SubsribedNodes = new List<int>() { 6 };
+            nodes[5].SubsribedNodes = new List<int>() { 3 };
+
+            NodeRepository.Nodes = nodes;
+            var request = new Request()
+            {
+                Heartbeats = 3,
+                Message = "nice",
+                TargetNodeId = 5,
+                RequestId = Guid.NewGuid()
+            };
+
+            listeners[0].SendBroadCast(request);
+         
             //Let the user close the server
             Console.WriteLine("\nPress any key to close server.");
             Console.ReadKey(true);
 
             //We have used NetworkComms so we should ensure that we correctly call shutdown
-            server.ShutDown();
+           
         }
     }
 }
