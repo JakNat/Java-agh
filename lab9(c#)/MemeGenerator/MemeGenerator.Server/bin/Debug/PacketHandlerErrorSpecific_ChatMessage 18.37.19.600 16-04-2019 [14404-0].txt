@@ -1,0 +1,10 @@
+Base Exception Type: System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MemeGenerator.Client.Server.Services.MemeService.GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, String incomingObject)
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.Connections.Connection.TriggerSpecificPacketHandlers(PacketHeader packetHeader, Object returnObject)
+
+Stack Trace:    at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MemeGenerator.Client.Server.Services.MemeService.GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, String incomingObject)
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.Connections.Connection.TriggerSpecificPacketHandlers(PacketHeader packetHeader, Object returnObject)

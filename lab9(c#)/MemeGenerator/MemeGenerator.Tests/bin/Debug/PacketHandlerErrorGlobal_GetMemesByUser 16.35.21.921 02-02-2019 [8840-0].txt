@@ -1,0 +1,34 @@
+Base Exception Type: System.NullReferenceException: Object reference not set to an instance of an object.
+   at MemeGenerator.Client.Server.Services.MemeService.<>c__DisplayClass4_0.<GetMemesByUSerRequest>b__1(Meme x) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\MemeService.cs:line 63
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at ProtoBuf.Meta.TypeModel.TrySerializeAuxiliaryType(ProtoWriter writer, Type type, DataFormat format, Int32 tag, Object value, Boolean isInsideList, Object parentList) in C:\code\protobuf-net\src\protobuf-net\Meta\TypeModel.cs:line 172
+   at ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value) in C:\code\protobuf-net\src\protobuf-net\Meta\TypeModel.cs:line 194
+   at ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context) in C:\code\protobuf-net\src\protobuf-net\Meta\TypeModel.cs:line 221
+   at ProtoBuf.Serializer.NonGeneric.Serialize(Stream dest, Object instance) in C:\code\protobuf-net\src\protobuf-net\Serializer.cs:line 406
+   at NetworkCommsDotNet.DPSBase.ProtobufSerializer.SerialiseDataObjectInt(Stream ouputStream, Object objectToSerialise, Dictionary`2 options) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\Dto\ProtobufSerializer.cs:line 80
+   at NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseGeneralObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   at NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseDataObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   at NetworkCommsDotNet.Packet.Constructor[payloadObjectType](String sendingPacketTypeStr, String requestReturnPacketTypeStr, payloadObjectType payloadObject, SendReceiveOptions options, Boolean isNested)
+   at NetworkCommsDotNet.Packet..ctor(String sendingPacketTypeStr, Object payloadObject, SendReceiveOptions options)
+   at NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend, SendReceiveOptions options)
+   at NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend)
+   at MemeGenerator.Client.Server.Services.MemeService.GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, String incomingObject) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\MemeService.cs:line 64
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    at MemeGenerator.Client.Server.Services.MemeService.<>c__DisplayClass4_0.<GetMemesByUSerRequest>b__1(Meme x) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\MemeService.cs:line 63
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at ProtoBuf.Meta.TypeModel.TrySerializeAuxiliaryType(ProtoWriter writer, Type type, DataFormat format, Int32 tag, Object value, Boolean isInsideList, Object parentList) in C:\code\protobuf-net\src\protobuf-net\Meta\TypeModel.cs:line 172
+   at ProtoBuf.Meta.TypeModel.SerializeCore(ProtoWriter writer, Object value) in C:\code\protobuf-net\src\protobuf-net\Meta\TypeModel.cs:line 194
+   at ProtoBuf.Meta.TypeModel.Serialize(Stream dest, Object value, SerializationContext context) in C:\code\protobuf-net\src\protobuf-net\Meta\TypeModel.cs:line 221
+   at ProtoBuf.Serializer.NonGeneric.Serialize(Stream dest, Object instance) in C:\code\protobuf-net\src\protobuf-net\Serializer.cs:line 406
+   at NetworkCommsDotNet.DPSBase.ProtobufSerializer.SerialiseDataObjectInt(Stream ouputStream, Object objectToSerialise, Dictionary`2 options) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Model\Dto\ProtobufSerializer.cs:line 80
+   at NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseGeneralObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   at NetworkCommsDotNet.DPSBase.DataSerializer.SerialiseDataObject[T](T objectToSerialise, List`1 dataProcessors, Dictionary`2 options)
+   at NetworkCommsDotNet.Packet.Constructor[payloadObjectType](String sendingPacketTypeStr, String requestReturnPacketTypeStr, payloadObjectType payloadObject, SendReceiveOptions options, Boolean isNested)
+   at NetworkCommsDotNet.Packet..ctor(String sendingPacketTypeStr, Object payloadObject, SendReceiveOptions options)
+   at NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend, SendReceiveOptions options)
+   at NetworkCommsDotNet.Connections.Connection.SendObject[sendObjectType](String sendingPacketType, sendObjectType objectToSend)
+   at MemeGenerator.Client.Server.Services.MemeService.GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, String incomingObject) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\MemeService.cs:line 64
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)

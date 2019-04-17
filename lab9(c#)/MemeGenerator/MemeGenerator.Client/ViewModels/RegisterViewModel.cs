@@ -1,6 +1,9 @@
 ﻿using Caliburn.Micro;
 using MemeGenerator.Client.Requests;
+using MemeGenerator.Client.Services;
 using MemeGenerator.Model.Dto;
+using MemeGenerator.Model.Responses;
+using NetworkCommsDotNet;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,12 +13,12 @@ namespace MemeGenerator.Client.ViewModels
     public class RegisterViewModel : Screen
     {
         private readonly IClientApp client;
-        private readonly IClientRequests clientRequests;
+        private readonly RegisterService registerService;
 
-        public RegisterViewModel(IClientApp client, IClientRequests clientRequests)
+        public RegisterViewModel(IClientApp client, RegisterService registerService )
         {
             this.client = client;
-            this.clientRequests = clientRequests;
+            this.registerService = registerService;
         }
 
         private string _userName;
@@ -60,7 +63,7 @@ namespace MemeGenerator.Client.ViewModels
         /// <summary>
         /// Register button
         /// </summary>
-        public async void Register()
+        public async Task<BaseResponseDto> Register()
         {
             var registerDto = new RegisterDto()
             {
@@ -68,15 +71,8 @@ namespace MemeGenerator.Client.ViewModels
                 Password = Password,
                 ConfrimPassword = ConfirmPassword
             };
-            try
-            {
-                string response = await Task.Run(() => clientRequests.RegisterRequest(registerDto));
-                MessageBox.Show("Server reponse: " + response);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("server not response");
-            }
+
+            return await registerService.RegisterButtonAction(registerDto);
         }
         #endregion
 

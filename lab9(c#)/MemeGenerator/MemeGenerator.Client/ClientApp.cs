@@ -37,11 +37,11 @@ namespace MemeGenerator.Client
             try
             {
                 ServerConnection = TCPConnection.GetConnection(connectionInfo, customSendReceiveOptions);
-                MessageBox.Show("You are connected to a server !");
+              //  MessageBox.Show("You are connected to a server !");
             }
             catch (Exception)
             {
-                MessageBox.Show("Cannot get connection to a server");
+                //MessageBox.Show("Cannot get connection to a server");
             }
         }
 

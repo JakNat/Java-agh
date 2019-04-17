@@ -1,0 +1,8 @@
+Base Exception Type: System.NullReferenceException: Object reference not set to an instance of an object.
+   at MemeGenerator.Client.Server.Services.UserService.LoginRequest(PacketHeader packetHeader, Connection connection, LoginDto incomingObject) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\UserService.cs:line 43
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)
+
+Stack Trace:    at MemeGenerator.Client.Server.Services.UserService.LoginRequest(PacketHeader packetHeader, Connection connection, LoginDto incomingObject) in C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Server\Services\UserService.cs:line 43
+   at NetworkCommsDotNet.Tools.PacketTypeHandlerDelegateWrapper`1.Process(PacketHeader packetHeader, Connection connection, Object obj)
+   at NetworkCommsDotNet.NetworkComms.TriggerGlobalPacketHandlers(PacketHeader packetHeader, Connection connection, Object returnObject, Boolean ignoreUnknownPacketTypeOverride)

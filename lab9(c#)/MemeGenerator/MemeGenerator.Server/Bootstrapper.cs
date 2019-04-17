@@ -19,13 +19,13 @@ namespace MemeGenerator.Client.Server
             var builder = new ContainerBuilder();
 
             // database
-            builder.RegisterInstance<DbContext>(new MemeGeneratorDBContext());
+            builder.RegisterType<MemeGeneratorDBContext>().AsSelf();
 
             builder.RegisterInstance<DummyAuthentication>(new DummyAuthentication());
 
             // repositories
-            builder.RegisterType<GenericRepository<Meme>>().As<IGenericRepository<Meme>>();
-            builder.RegisterType<GenericRepository<User>>().As<IGenericRepository<User>>();
+            builder.RegisterType<GenericRepository<Meme, MemeGeneratorDBContext>>().As<IGenericRepository<Meme>>();
+            builder.RegisterType<GenericRepository<User, MemeGeneratorDBContext>>().As<IGenericRepository<User>>();
 
             // services
             builder.RegisterType<UserService>().As<IUserService>();

@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace MemeGenerator.DataAccessLayer.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity>
-     where TEntity : class
+    public class GenericRepository<TEntity, TContext> : IGenericRepository<TEntity>
+        where TEntity : class
+        where TContext : DbContext
     {
-        protected readonly DbContext Context;
 
-        public GenericRepository(DbContext context)
+        protected readonly TContext Context;
+
+        public GenericRepository(TContext context)
         {
             this.Context = context;
         }

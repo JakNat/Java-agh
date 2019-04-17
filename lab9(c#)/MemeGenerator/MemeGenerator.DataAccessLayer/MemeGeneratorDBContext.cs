@@ -10,9 +10,9 @@ namespace MemeGenerator.DataAccessLayer
             Database.SetInitializer<MemeGeneratorDBContext>(new DropCreateDatabaseIfModelChanges<MemeGeneratorDBContext>());
         }
 
-        public DbSet<Meme> Memes { get; set; }
+        public virtual DbSet<Meme> Memes { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
    
     }
 }

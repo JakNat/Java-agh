@@ -10,24 +10,27 @@ using MemeGenerator.Client;
 using MemeGenerator.Model;
 using MemeGenerator.Client.Requests;
 using MemeGenerator.Client.Utils;
+using NetworkCommsDotNet;
+using MemeGenerator.Client.Services;
 
 namespace MemeGenerator.Client.ViewModels
 {
     public class MemeCreatorViewModel : Screen
     {
         private readonly IClientApp client;
-        private readonly IClientRequests clientRequests;
+        private readonly MemeCreatorService memeCreatorService;
 
-        private string _topText = "Top text";
-        private string _bottomText = "Bottom text";
+        public MemeCreatorViewModel(IClientApp client ,MemeCreatorService memeCreatorService)
+        {
+            this.client = client;
+            this.memeCreatorService = memeCreatorService;
+        }
+
+        private string _topText;
+        private string _bottomText;
         private BitmapImage _image;
         private string _title;
 
-        public MemeCreatorViewModel(IClientApp client ,IClientRequests clientRequests)
-        {
-            this.client = client;
-            this.clientRequests = clientRequests;
-        }
 
         public string Title
         {
@@ -74,21 +77,13 @@ namespace MemeGenerator.Client.ViewModels
         /// <summary>
         /// button -> sending your new meme properties to a server
         /// </summary>
-        public async void CreateByServer()
+        public async Task<BaseResponseDto> CreateByServer()
         {
             Bitmap bitmap = ImageHelper.BitmapImage2Bitmap(Image);
             MemeDto meme = new MemeDto("meme", TopText, BottomText, bitmap);
             meme.Key = client.Key;
 
-            try
-            {
-                string response = await Task.Run(() => clientRequests.CreateRequest(meme));
-                MessageBox.Show("Server reponse: " + response);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("server not response");
-            }
+            return await memeCreatorService.CreateByServerAction(meme);
         }
 
         /// <summary>

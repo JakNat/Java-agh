@@ -5,6 +5,9 @@ using NetworkCommsDotNet.Connections;
 using System;
 using static NetworkCommsDotNet.NetworkComms;
 using MemeGenerator.Model;
+using System.Linq;
+using NetworkCommsDotNet.Connections.UDP;
+using System.Net;
 
 namespace MemeGenerator.Client.Server
 {
@@ -17,6 +20,15 @@ namespace MemeGenerator.Client.Server
         private readonly IMemeService memeService;
         private readonly IUserService userService;
 
+        private int myVar = 1;
+        private int broadCastPort = 12845;
+
+        public int MyProperty
+        {
+            get { myVar++; return myVar ; }
+        }
+
+
         public ServerApp(IMemeService memeService,
             IUserService userService
             )
@@ -24,7 +36,7 @@ namespace MemeGenerator.Client.Server
             this.memeService = memeService;
             this.userService = userService;
         }
-
+        public string ServerAddress { get; set; }
         public void StartListening()
         {
             //Start listening for incoming connections
@@ -33,8 +45,59 @@ namespace MemeGenerator.Client.Server
             //Print out the IPs and ports we are now listening on
             Console.WriteLine("Server listening for TCP connection on:");
             foreach (System.Net.IPEndPoint localEndPoint in Connection.ExistingLocalListenEndPoints(ConnectionType.TCP))
+            {
+                if (ServerAddress == null)
+                    ServerAddress = localEndPoint.Address.ToString();
                 Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
+            }
         }
+        public void StartListening(int port)
+        {
+            NetworkComms.AppendGlobalIncomingPacketHandler<string>("ChatMessage",
+    (packetHeader, connection, incomingString) =>
+    {
+        Console.WriteLine("\n  ... Incoming message from " +
+            connection.ToString() + " saying '" +
+            incomingString + "'.");
+    });
+            //Start listening for incoming connections
+            Connection.StartListening(ConnectionType.UDP, new System.Net.IPEndPoint(System.Net.IPAddress.Any, port));
+
+            //Print out the IPs and ports we are now listening on
+            Console.WriteLine("Server listening for TCP connection on:");
+            foreach (System.Net.IPEndPoint localEndPoint in Connection.ExistingLocalListenEndPoints(ConnectionType.TCP))
+            {
+                if (ServerAddress == null)
+                    ServerAddress = localEndPoint.Address.ToString();
+                Console.WriteLine("{0}:{1}", localEndPoint.Address, localEndPoint.Port);
+            }
+        }
+
+        public void SendBroadCast(int port)
+        {
+            UDPConnection.SendObject("ChatMessage", "This is the broadcast test message!",
+                new IPEndPoint(IPAddress.Broadcast, port));
+        }
+        public void StartListeningUDP(int port)
+        {
+
+            SendReceiveOptions optionsToUseForUDPInput = NetworkComms.DefaultSendReceiveOptions;
+            var udpListener = new UDPConnectionListener(NetworkComms.DefaultSendReceiveOptions, ApplicationLayerProtocolStatus.Enabled, UDPConnection.DefaultUDPOptions);
+
+            udpListener.AppendIncomingPacketHandler<string>("ChatMessage",
+    (packetHeader, connection, incomingString) =>
+    {
+        Console.WriteLine($"\n  ..[{port}]. Incoming message from " +
+            connection.ToString() + " saying '" +
+            incomingString + "'.");
+    });
+
+            //udpListener.ConnectionType = ConnectionType.UDP;
+            Connection.StartListening(udpListener, new IPEndPoint(System.Net.IPAddress.Any, port));
+            Console.WriteLine("Server listening for UDP connection on:");
+        //    SendBroadCast(port);
+        }
+
 
         /// <summary>
         /// Register all client requests

@@ -1,20 +1,22 @@
 ﻿using Caliburn.Micro;
 using MemeGenerator.Client.Requests;
+using MemeGenerator.Client.Services;
 using MemeGenerator.Model.Dto;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MemeGenerator.Client.ViewModels
 {
     public class MemeLibraryViewModel : Screen
     {
         private readonly IClientApp client;
-        private readonly IClientRequests clientRequests;
+        private readonly MemeLibraryService memeLibraryService;
 
-        public MemeLibraryViewModel(IClientApp client, IClientRequests clientRequests)
+        public MemeLibraryViewModel(IClientApp client, MemeLibraryService memeLibraryService)
         {
             this.client = client;
-            this.clientRequests = clientRequests;
+            this.memeLibraryService = memeLibraryService;
         }
 
         private string _searchByNameProperty;
@@ -41,23 +43,24 @@ namespace MemeGenerator.Client.ViewModels
             }
         }
 
-
         #region Buttons
 
         /// <summary>
         /// button -> Load memes by user id 
         /// </summary>
-        public void LoadMemeByUser()
+        public async Task<List<MemeDto>> LoadMemeByUser()
         {
-            Memes = clientRequests.LoadMemeByUser();
+            Memes = await memeLibraryService.LoadMemeByUserAction();
+            return Memes;
         }
 
         /// <summary>
         /// button -> Load memes by typed tittle
         /// </summary>
-        public void LoadMemeByTitle()
+        public async Task<List<MemeDto>> LoadMemeByTitle()
         {
-            Memes = clientRequests.LoadMemeByTitle(SearchByNameProperty);
+            Memes = await memeLibraryService.LoadMemeByTitleAction(SearchByNameProperty);
+            return Memes;
         }
 
         #endregion

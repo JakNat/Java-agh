@@ -42,7 +42,7 @@ namespace MemeGenerator.Client.ViewModels
         /// </summary>
         public void LoadLoginPage()
         {
-            ActivateItem(IoC.Get<LoginViewModel>());
+            ActivateItem(loginViewModel);
         }
 
         /// <summary>
@@ -67,7 +67,6 @@ namespace MemeGenerator.Client.ViewModels
         public void Connect()
         {
             ActivateItem(connectionViewModel);
-           // client.GetConnection();
         }
         #endregion
     }

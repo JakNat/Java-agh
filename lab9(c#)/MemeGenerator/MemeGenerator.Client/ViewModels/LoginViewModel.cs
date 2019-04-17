@@ -1,13 +1,8 @@
 ﻿using Caliburn.Micro;
-using MemeGenerator.Client.Requests;
-using MemeGenerator.Model;
+using MemeGenerator.Client.Services;
 using MemeGenerator.Model.Dto;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using LoginDto = MemeGenerator.Model.Dto.LoginDto;
 
 namespace MemeGenerator.Client.ViewModels
@@ -15,12 +10,12 @@ namespace MemeGenerator.Client.ViewModels
     public class LoginViewModel : Screen
     {
         private readonly IClientApp client;
-        private readonly IClientRequests clientRequests;
+        private readonly LoginService loginService;
 
-        public LoginViewModel(IClientApp client, IClientRequests clientRequests)
+        public LoginViewModel(IClientApp client, LoginService loginService)
         {
             this.client = client;
-            this.clientRequests = clientRequests;
+            this.loginService = loginService;
         }
 
         private string _userName;
@@ -49,37 +44,50 @@ namespace MemeGenerator.Client.ViewModels
         }
 
         #region Buttons
-
         /// <summary>
         /// button -> login to server
         /// </summary>
-        public async void Login()
+        public async Task<LoginResponseDto> Login()
         {
+            // Call the server and attempt to login with credentials
+            var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
+                // Set URL
+                RouteHelpers.GetAbsoluteRoute(ApiRoutes.Login),
+                // Create api model
+                new LoginCredentialsApiModel
+                {
+                    UsernameOrEmail = Email,
+                    Password = (parameter as IHavePassword).SecurePassword.Unsecure()
+                });
+
+            // If the response has an error...
+            if (await result.HandleErrorIfFailedAsync("Login Failed"))
+                // We are done
+                return;
+
+            // OK successfully logged in... now get users data
+            var loginResult = result.ServerResponse.Response;
+
+            // Let the application view model handle what happens
+            // with the successful login
+            await ViewModelApplication.HandleSuccessfulLoginAsync(loginResult);
+
+
             var loginDto = new LoginDto()
             {
                 Login = UserName,
                 Password = Password
             };
-
-            try
+            var response = await loginService.LoginButtonAction(loginDto);
+            if (response.Key != null)
             {
-                LoginResponseDto response = await Task.Run(() => clientRequests.LoginRequest(loginDto));
-                if(response.Key != null)
-                {
-                    client.Key = (Guid)response.Key;
-                }
-                MessageBox.Show("Server reponse: " + response.Message);
-                MessageBox.Show("your key:" + response.Key);
+                client.Key = (Guid)response.Key;
             }
-            catch (Exception)
-            {
-                MessageBox.Show("server not response");
-            }
+            return response;
         }
         #endregion
 
         #region Validators
-
         /// <summary>
         /// validator -> Login button
         /// </summary>
@@ -92,7 +100,6 @@ namespace MemeGenerator.Client.ViewModels
                 && !String.IsNullOrWhiteSpace(Password);
             }
         }
-
         #endregion
     }
 }

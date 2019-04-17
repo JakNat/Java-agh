@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using MemeGenerator.Model;
 using MemeGeneratorServer;
+using MemeGenerator.Model.Responses;
 
 namespace MemeGenerator.Client.Server.Services
 {
@@ -38,47 +39,53 @@ namespace MemeGenerator.Client.Server.Services
             if (user == null)
             {
                 UserNotFoundMethod(connection, loginResponseDto);
+                return;
             }
 
             if (!String.Equals(user.Password, incomingObject.Password))
             {
                 WrongPasswordMethod(connection, loginResponseDto);
+                return;
             }
 
             Console.WriteLine("Login request successful:");
             Console.WriteLine("User: '{0}' logged to a server.", incomingObject.Login);
 
             loginResponseDto.Key = dummyAuthentication.AddUser(user.UserId);
-            loginResponseDto.Message = "Logging successful.";
+            loginResponseDto.Message = ResponseMessage.LoginSuccessfull;
       
             connection.SendObject(PacketTypes.Login.Response, loginResponseDto);
         }
 
         private void WrongPasswordMethod(Connection connection, LoginResponseDto loginResponseDto)
         {
-            loginResponseDto.Message = "Logging failed.";
+            loginResponseDto.Message = ResponseMessage.LogingFailed;
             Console.WriteLine("Invalid login request: wrong password.");
             connection.SendObject(PacketTypes.Login.Response, loginResponseDto);
         }
 
         private void UserNotFoundMethod(Connection connection, LoginResponseDto loginResponseDto)
         {
-            loginResponseDto.Message = "Logging failed.";
+            loginResponseDto.Message = ResponseMessage.LogingFailed;
             Console.WriteLine("Invalidd login request: user doesn't exist.");
             connection.SendObject(PacketTypes.Login.Response, loginResponseDto);
         }
+
 
         public async void RegisterRequest(PacketHeader packetHeader, Connection connection, RegisterDto incomingObject)
         {
             Console.WriteLine("\nRegistration request...");
 
+            var registerResponse = new BaseResponseDto();
+
             // getting requested user
             User user = userRepository
                 .GetAllByCondition(x => x.Name == incomingObject.Login)
                 .FirstOrDefault();
+
             if (user != null)
             {
-                connection.SendObject(PacketTypes.Register.Response, "User already exists.");
+                UserAlreadyExistsMethod(connection, registerResponse);
                 return;
             }
 
@@ -94,18 +101,32 @@ namespace MemeGenerator.Client.Server.Services
                     CreatedDate = DateTime.Now,
 
                 };
-                userRepository.Add(newUser);
 
-               
+                userRepository.Add(newUser);
                 await userRepository.SaveAsync();
-                Console.WriteLine("New user added: '{0}'",incomingObject.Login);
-                connection.SendObject(PacketTypes.Register.Response, "You are registered.");
+
+                UserRegisteredMethod(connection, incomingObject, registerResponse);
             }
             else
             {
                 Console.WriteLine("Not same passwords");
-                connection.SendObject(PacketTypes.Register.Response, "Error.");
+                registerResponse.Message = ResponseMessage.WrongPassword;
+                connection.SendObject(PacketTypes.Register.Response, registerResponse);
+
             }
+        }
+        private void UserAlreadyExistsMethod(Connection connection, BaseResponseDto loginResponseDto)
+        {
+            loginResponseDto.Message = ResponseMessage.RegisterFailed;
+            Console.WriteLine("User already exists.");
+            connection.SendObject(PacketTypes.Register.Response, loginResponseDto);
+        }
+
+        private void UserRegisteredMethod(Connection connection, RegisterDto incomingObject, BaseResponseDto registerResponse)
+        {
+            registerResponse.Message = ResponseMessage.RegisterSuccessfull;
+            Console.WriteLine("New user added: '{0}'", incomingObject.Login);
+            connection.SendObject(PacketTypes.Register.Response, registerResponse);
         }
     }
 }

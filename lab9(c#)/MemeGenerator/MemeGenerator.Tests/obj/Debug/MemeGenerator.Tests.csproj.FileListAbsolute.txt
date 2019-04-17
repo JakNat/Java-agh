@@ -62,7 +62,6 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Test
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.core.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\xunit.execution.desktop.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.dll
-C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\protobuf-net.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Caliburn.Micro.Platform.Core.dll
@@ -87,3 +86,14 @@ C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Test
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.csproj.CopyComplete
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.dll
 C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\obj\Debug\MemeGenerator.Tests.pdb
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Castle.Core.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\EntityFrameworkMock.Moq.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\EntityFrameworkMock.Shared.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Moq.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.ValueTuple.dll
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Castle.Core.xml
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Moq.pdb
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\Moq.xml
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\bobotb\Desktop\javaa\Java-agh\lab9(c#)\MemeGenerator\MemeGenerator.Tests\bin\Debug\System.ValueTuple.xml

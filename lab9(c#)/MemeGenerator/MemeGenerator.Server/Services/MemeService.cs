@@ -12,6 +12,7 @@ using MemeGenerator.Server.Utils;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing;
+using MemeGenerator.Model.Responses;
 
 namespace MemeGenerator.Client.Server.Services
 {
@@ -26,6 +27,10 @@ namespace MemeGenerator.Client.Server.Services
             this.dummyAuthentication = dummyAuthentication;
         }
 
+        public async void GenerateMemeRequest(PacketHeader header, Connection connection, string message)
+        {
+         
+        }
         /// <summary>
         /// Generete new meme by a server and add to a database
         /// </summary>
@@ -46,21 +51,26 @@ namespace MemeGenerator.Client.Server.Services
             {
                 memeRepository.Add(meme);
                 await memeRepository.SaveAsync();
-                connection.SendObject(PacketTypes.CreateMeme.Response, "Meme added.");
+                connection.SendObject(PacketTypes.CreateMeme.Response, ResponseMessage.MemeAdded);
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("\nError :( \nmessage:  " + ex.Message);
-                connection.SendObject(PacketTypes.CreateMeme.Response, "Error ocured.");
+                connection.SendObject(PacketTypes.CreateMeme.Response, ResponseMessage.ErrorOcured);
             }
         }
 
         public void GetMemesByUSerRequest(PacketHeader packetHeader, Connection connection, string incomingObject)
+            
         {
-            ConsoleMessage.ReqestReceived(packetHeader.PacketType);
-            var memes = memeRepository.Include(x => x.User).Where(x => x.User.Name == incomingObject);
-            connection.SendObject(PacketTypes.GetMemesByUser.Response, memes);
+            Console.WriteLine("o kuerwa ");
+            //Guid key = Guid.NewGuid();
+            //var userId = dummyAuthentication.LoggedUsers[key];
+
+            //ConsoleMessage.ReqestReceived(packetHeader.PacketType);
+            //var memes = memeRepository.Include(x => x.User).Where(x => x.User.Name == incomingObject);
+            //connection.SendObject(PacketTypes.GetMemesByUser.Response, memes);
         }
 
         public void GetMemesByTitle(PacketHeader packetHeader, Connection connection, string incomingObject)
